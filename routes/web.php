@@ -7,3 +7,6 @@ Route::get('/', [LandingController::class, 'index']);
 Route::get('/masuk', function () {
     return view('login');
 });
+Route::get('/daftar', function () {
+    return view('register');
+});
