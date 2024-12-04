@@ -11,7 +11,7 @@ Route::get('/masuk', function () {
     return view('login');
 });
 
-// Route untuk halaman pendaftaran
+// Route untuk halaman pendaftaran  
 Route::get('/daftar', function () {
     return view('register');
 });
