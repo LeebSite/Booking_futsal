@@ -21,10 +21,4 @@ class AppServiceProvider extends ServiceProvider
     {
         //
     }
-    protected $listen = [
-        'Illuminate\Auth\Events\Login' => [
-            'App\Listeners\HashPasswordAfterLogin',
-        ],
-    ];
-    
 }

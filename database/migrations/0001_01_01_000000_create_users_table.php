@@ -12,16 +12,15 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('users', function (Blueprint $table) {
-            $table->id(); // Menggunakan id sebagai primary key
-            $table->string('username');
+            $table->id();
             $table->string('name');
             $table->string('email')->unique();
+            $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
-            $table->enum('role', ['customer', 'operator', 'superadmin']);
+            $table->rememberToken();
             $table->timestamps();
         });
 
-        // Tabel lain (password_reset_tokens dan sessions) tetap seperti sebelumnya
         Schema::create('password_reset_tokens', function (Blueprint $table) {
             $table->string('email')->primary();
             $table->string('token');
@@ -47,5 +46,4 @@ return new class extends Migration
         Schema::dropIfExists('password_reset_tokens');
         Schema::dropIfExists('sessions');
     }
-    
 };
