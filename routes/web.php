@@ -11,12 +11,12 @@ Route::get('/masuk', function () {
     return view('login');
 });
 
-// Route untuk halaman pendaftaran  
+// Route untuk halaman pendaftaran
 Route::get('/daftar', function () {
     return view('register');
 });
 
 // Route untuk halaman booking lapangan (dalam folder customer)
-Route::get('/booking', function () {
-    return view('customer.bookinglap'); // Perhatikan tambahan 'customer.'
+Route::get('/pemesanan', function () {
+    return view('customer.pemesanan'); // Perhatikan tambahan 'customer.'
 });

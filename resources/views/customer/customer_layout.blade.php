@@ -15,7 +15,7 @@
         <div class="container mx-auto flex justify-between items-center">
             <div class="flex items-center space-x-4">
                 <img src="https://via.placeholder.com/50" alt="Logo" class="w-10 h-10 rounded-full">
-                <a href="/booking" class="text-white text-lg font-semibold hover:text-indigo-300">Pemesanan</a>
+                <a href="/pemesanan" class="text-white text-lg font-semibold hover:text-indigo-300">Pemesanan</a>
                 <a href="/riwayat" class="text-white text-lg font-semibold hover:text-indigo-300">Riwayat</a>
             </div>
             <div class="flex items-center space-x-4">
