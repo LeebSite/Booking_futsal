@@ -20,3 +20,7 @@ Route::get('/daftar', function () {
 Route::get('/pemesanan', function () {
     return view('customer.pemesanan'); // Perhatikan tambahan 'customer.'
 });
+
+Route::get('/riwayat', function () {
+    return view('customer.riwayat');
+});
