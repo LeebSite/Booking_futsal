@@ -39,7 +39,7 @@
         </div>
 
         <!-- Mobile Menu -->
-        <div id="mobile-menu" class="hidden md:hidden bg-green-600">
+        <div id="mobile-menu" class="hidden md:hidden bg-green-600 mb-2">
             <a href="/" class="block text-white px-4 py-2 text-sm hover:bg-green-700">Beranda</a>
             <a href="/bookinglap" class="block text-white px-4 py-2 text-sm hover:bg-green-700">Booking</a>
             <a href="/riwayat" class="block text-white px-4 py-2 text-sm hover:bg-green-700">Riwayat saya</a>
