@@ -13,15 +13,15 @@
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between h-16">
                 <div class="flex-shrink-0 flex items-center">
-                    <a href="/" class="text-2xl font-bold text-indigo-600">
+                    <a href="/" class="text-2xl font-bold text-green-600">
                         Andi's Futsal
                     </a>
                 </div>
                 <div class="flex items-center">
-                    <a href="/masuk" class="px-4 py-2 rounded-md text-sm font-medium text-indigo-600 bg-white hover:bg-indigo-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
+                    <a href="/login" class="px-4 py-2 rounded-md text-sm font-medium text-green-600 bg-white hover:bg-green-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green-500">
                         Masuk
                     </a>
-                    <a href="/daftar" class="ml-4 px-4 py-2 rounded-md text-sm font-medium text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
+                    <a href="/register" class="ml-4 px-4 py-2 rounded-md text-sm font-medium text-white bg-green-600 hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green-500">
                         Daftar
                     </a>
                 </div>
@@ -30,17 +30,17 @@
     </nav>
 
     <!-- Hero Section -->
-    <div class="bg-indigo-600">
+    <div class="bg-green-600">
         <div class="max-w-7xl mx-auto py-16 px-4 sm:py-24 sm:px-6 lg:px-8">
             <h1 class="text-4xl font-extrabold tracking-tight text-white sm:text-5xl md:text-6xl">
                 <span class="block">Selamat Datang di</span>
-                <span class="block text-indigo-200">Andi's Futsal</span>
+                <span class="block text-green-200">Andi's Futsal</span>
             </h1>
-            <p class="mt-6 max-w-lg text-xl text-indigo-200 sm:max-w-3xl">
+            <p class="mt-6 max-w-lg text-xl text-green-200 sm:max-w-3xl">
                 Nikmati pengalaman bermain futsal terbaik di Pekanbaru. Booking lapangan sekarang dan rasakan keseruannya!
             </p>
             <div class="mt-10">
-                <a href="#info" class="inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-md text-indigo-600 bg-white hover:bg-indigo-50">
+                <a href="#info" class="inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-md text-green-600 bg-white hover:bg-green-50">
                     Lihat Informasi
                 </a>
             </div>
@@ -54,7 +54,7 @@
             <div class="mt-8 grid gap-8 md:grid-cols-2 lg:grid-cols-3">
                 <div class="flex">
                     <div class="flex-shrink-0">
-                        <i class="fas fa-map-marker-alt h-6 w-6 text-indigo-600"></i>
+                        <i class="fas fa-map-marker-alt h-6 w-6 text-green-600"></i>
                     </div>
                     <div class="ml-3">
                         <h3 class="text-lg font-medium text-gray-900">Lokasi</h3>
@@ -65,7 +65,7 @@
                 </div>
                 <div class="flex">
                     <div class="flex-shrink-0">
-                        <i class="fas fa-clock h-6 w-6 text-indigo-600"></i>
+                        <i class="fas fa-clock h-6 w-6 text-green-600"></i>
                     </div>
                     <div class="ml-3">
                         <h3 class="text-lg font-medium text-gray-900">Jam Operasional</h3>
@@ -76,7 +76,7 @@
                 </div>
                 <div class="flex">
                     <div class="flex-shrink-0">
-                        <i class="fas fa-phone h-6 w-6 text-indigo-600"></i>
+                        <i class="fas fa-phone h-6 w-6 text-green-600"></i>
                     </div>
                     <div class="ml-3">
                         <h3 class="text-lg font-medium text-gray-900">Kontak</h3>
