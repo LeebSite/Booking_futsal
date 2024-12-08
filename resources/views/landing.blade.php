@@ -16,7 +16,6 @@
                     <a href="/" class="text-2xl font-bold text-green-600">
                         Andi's Futsal
                     </a>
-                    
                 </div>
                 <div class="flex items-center">
                     <a href="/login" class="px-4 py-2 rounded-md text-sm font-medium text-green-600 bg-white hover:bg-green-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green-500">
