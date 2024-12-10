@@ -1,46 +1,62 @@
 @extends('admin.admin_layout')
 
 @section('content')
-<div class="bg-white p-6 rounded-lg shadow-md">
-    <h1 class="text-2xl font-bold mb-4 text-gray-800">Edit Lapangan</h1>
+<div class="container mx-auto">
+    <div class="bg-white p-6 rounded-lg shadow-md">
+        <h1 class="text-2xl font-bold mb-4 text-gray-800">Kelola Lapangan</h1>
 
-    <form action="{{ route('lapangan.update', $lapangan->id) }}" method="POST" enctype="multipart/form-data" class="space-y-4">
-        @csrf
-        @method('PUT')
-        <div>
-            <label class="block text-gray-700">Nama Lapangan</label>
-            <input type="text" name="nama_lapangan" class="border border-gray-300 rounded w-full p-2" value="{{ $lapangan->nama_lapangan }}" required>
+        @if(session('success'))
+            <div class="bg-green-100 text-green-800 p-4 rounded mb-4">
+                {{ session('success') }}
+            </div>
+        @endif
+
+        <a href="{{ route('lapangan.create') }}" class="button-tambah bg-blue-600 hover:bg-blue-700 text-white mb-4 inline-block">
+            <i class="fas fa-plus-circle"></i> Tambah Lapangan
+        </a>
+        <div class="overflow-x-auto">
+            <table class="min-w-full border-collapse border border-gray-300 rounded-lg overflow-hidden">
+                <thead class="bg-gray-50">
+                    <tr>
+                        <th class="border border-gray-300 px-3 py-3 text-left text-gray-700 bg-gray-200">Nama Lapangan</th>
+                        <th class="border border-gray-300 px-3 py-3 text-left text-gray-700 bg-gray-200">Deskripsi</th>
+                        <th class="border border-gray-300 px-3 py-3 text-left text-gray-700 bg-gray-200">Harga Per Jam</th>
+                        <th class="border border-gray-300 px-3 py-3 text-left text-gray-700 bg-gray-200">Status</th>
+                        <th class="border border-gray-300 px-3 py-3 text-left text-gray-700 bg-gray-200">Foto</th>
+                        <th class="border border-gray-300 px-3 py-3 text-left text-gray-700 bg-gray-200">Aksi</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach ($lapangan as $item)
+                    <tr class="hover:bg-gray-100">
+                        <td class="border border-gray-200 px-3 py-1">{{ $item->nama_lapangan }}</td>
+                        <td class="border border-gray-200 px-3 py-1">{{ $item->deskripsi }}</td>
+                        <td class="border border-gray-200 px-3 py-1">Rp {{ number_format($item->harga_per_jam, 0, ',', '.') }}</td>
+                        <td class="border border-gray-200 px-3 py-1">{{ ucfirst($item->status) }}</td>
+                        <td class="border border-gray-200 px-4 py-0">
+                            @if($item->foto)
+                                <img src="{{ Storage::url($item->foto) }}" alt="{{ $item->nama_lapangan }}" style="height: 100px; object-fit: cover;">
+                            @else
+                                <span class="text-gray-500">Tidak ada foto</span>
+                            @endif
+                        </td>
+                        <td class="border border-gray-200 px-2 py-2 flex gap-2">
+                            <a href="{{ route('lapangan.edit', $item->id) }}" class="button-ubah bg-yellow-500 text-white hover:bg-yellow-600">
+                                <i class="fas fa-edit"></i> Ubah
+                            </a>
+                            <form action="{{ route('lapangan.destroy', $item->id) }}" method="POST" onsubmit="return confirm('Yakin ingin menghapus?')">
+                                @csrf
+                                @method('DELETE')
+                                <button class="button-hapus bg-red-500 text-white hover:bg-red-600">
+                                    <i class="fas fa-trash"></i> Hapus
+                                </button>
+                            </form>
+                        </td>
+                    </tr>
+                    @endforeach
+                </tbody>
+            </table>   
         </div>
-        <div>
-            <label class="block text-gray-700">Deskripsi</label>
-            <textarea name="deskripsi" class="border border-gray-300 rounded w-full p-2">{{ $lapangan->deskripsi }}</textarea>
-        </div>
-        <div>
-            <label class="block text-gray-700">Harga Per Jam</label>
-            <input type="number" name="harga_per_jam" class="border border-gray-300 rounded w-full p-2" value="{{ $lapangan->harga_per_jam }}" required>
-        </div>
-        <div>
-            <label class="block text-gray-700">Status</label>
-            <select name="status" class="border border-gray-300 rounded w-full p-2">
-                <option value="tersedia" {{ $lapangan->status == 'tersedia' ? 'selected' : '' }}>Tersedia</option>
-                <option value="tidak_tersedia" {{ $lapangan->status == 'tidak_tersedia' ? 'selected' : '' }}>Tidak Tersedia</option>
-            </select>
-        </div>
-        <div>
-            <label class="block text-gray-700">Foto</label>
-            <input type="file" name="foto" class="border border-gray-300 rounded w-full p-2">
-            @if($lapangan->foto)
-                <img src="{{ Storage::url($lapangan->foto) }}" alt="Foto Lapangan" class="w-20 h-20 object-cover mt-2">
-            @endif
-        </div>
-        <div>
-            <button type="submit" class="bg-blue-500 hover:bg-blue-700 text-white px-4 py-2 rounded">
-                <i class="fas fa-save"></i> Simpan
-            </button>
-            <a href="{{ route('lapangan.index') }}" class="bg-gray-500 hover:bg-gray-700 text-white px-4 py-2 rounded">
-                <i class="fas fa-times"></i> Batal
-            </a>
-        </div>
-    </form>
+    </div>
 </div>
 @endsection

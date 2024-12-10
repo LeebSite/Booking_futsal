@@ -63,7 +63,7 @@ class LapanganController extends Controller
         }
 
         $lapangan->update($validated);
-        return redirect()->route('lapangan.index')->with('success', 'Lapangan berhasil diper barui.');
+        return redirect()->route('lapangan.index')->with('success', 'Lapangan berhasil diperbarui.');
     }
 
     public function destroy($id)
