@@ -22,7 +22,7 @@ Route::middleware(['auth', CheckRole::class.':admin'])->prefix('admin')->group(f
         return view('admin.beranda');
     })->name('admin.beranda');
 
-    // Route::resource('lapangan', LapanganController::class);
+    Route::resource('lapangan', LapanganController::class);
     
     Route::get('/pesanan', function () {
         return view('admin.pesanan');
