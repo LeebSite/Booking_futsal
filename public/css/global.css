@@ -1,0 +1,138 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+    font-family: Helvetica, Arial, sans-serif;
+}
+
+h1, h2, h3, h4 {
+    font-family: Arial, sans-serif;
+}
+
+.container {
+    max-width: 100%;
+    padding: 1rem;
+}
+
+.table-responsive {
+    overflow-x: auto;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    table-layout: auto;
+    font-size: 1rem;
+}
+
+th, td {
+    /* padding: 0.75rem; */
+    border: 1px solid #ccc;
+    text-align: left;
+}
+
+thead th {
+    background-color: #f8f9fa;
+    font-weight: bold;
+}
+
+tbody tr:hover {
+    background-color: #f1f1f1;
+}
+
+input, select, textarea {
+    width: 100%;
+    padding-top: 5px;
+    padding-left: 10px;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin-bottom: 1rem;
+}
+
+.button-tambah, .button-ubah, .button-hapus, .button-simpan, .button-batal{
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border-radius: 8px;
+}
+
+button {
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 2px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Media Queries */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 1.2rem;
+    }
+
+    table {
+        font-size: 0.6rem;
+    }
+
+    input, select, textarea {
+        font-size: 0.775rem;
+    }
+
+    button {
+        font-size: 0.775rem;
+        padding: 0.2rem 0.4rem;
+    }
+
+    .container {
+        padding: 0.5rem;
+    }
+    .button-tambah, .button-ubah, .button-hapus, .button-simpan, .button-batal{
+        padding-left: 5px;
+        padding-right: 5px;
+        padding-top: 6px;
+        padding-bottom: 6px;
+        border-radius: 5px;
+        font-size: 0.7rem;
+        
+    }
+}
+
+@media (max-width: 480px) {
+    h1 {
+        font-size: 1.25rem;
+    }
+
+    table {
+        font-size: 0.4rem;
+    }
+
+    th, td {
+        padding: 0.5rem;
+    }
+
+    input, select, textarea {
+        font-size: 0.75rem;
+        padding: 0.4rem;
+    }
+
+    button {
+        font-size: 0.75rem;
+        padding: 0.375rem 0.75rem;
+    }
+
+    .table-responsive {
+        overflow-x: auto;
+    }
+}
