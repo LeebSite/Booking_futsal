@@ -5,6 +5,7 @@ use App\Http\Middleware\CheckRole; // Pastikan ini ada
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\LandingController;
 use App\Http\Controllers\LapanganController;
+use App\Http\Controllers\BookingController;
 
 Route::get('/', [LandingController::class, 'index']);
 
@@ -34,4 +35,12 @@ Route::middleware(['auth', CheckRole::class.':customer'])->prefix('customer')->g
     Route::get('/beranda', function () {
         return view('customer.beranda');
     })->name('customer.beranda');
+
+    Route::get('/bookinglap', [BookingController::class, 'index'])->name('customer.booking');
+    Route::post('/bookinglap', [BookingController::class, 'store'])->name('customer.booking.store');
 });
+// Customer Routes
+// Route::middleware(['auth', 'role:customer'])->group(function () {
+
+// });
+
