@@ -22,8 +22,8 @@
                 </div>
                 <!-- Desktop Menu -->
                 <div class="hidden md:flex items-center space-x-2">
-                    <a href="/" class="text-white hover:bg-emerald-700 px-3 py-2 rounded-md text-sm font-semibold">Beranda</a>
-                    <a href="/bookinglap" class="text-white hover:bg-emerald-700 px-3 py-2 rounded-md text-sm font-semibold">Booking</a>
+                    <a href="/customer/beranda" class="text-white hover:bg-emerald-700 px-3 py-2 rounded-md text-sm font-semibold">Beranda</a>
+                    <a href="/customer/bookinglap" class="text-white hover:bg-emerald-700 px-3 py-2 rounded-md text-sm font-semibold">Booking</a>
                     <a href="/riwayat" class="text-white hover:bg-emerald-700 px-3 py-2 rounded-md text-sm font-semibold">Riwayat</a>
                     <a href="/profil" class="text-white hover:bg-emerald-700 px-3 py-2 rounded-2xl text-sm font-semibold"><i class="fas fa-user"></i></a>
                     <a href="#" onclick="document.getElementById('logout-form').submit()" class="ml-4 px-4 py-2 rounded-md text-sm font-semibold text-emerald-600 bg-white hover:bg-emerald-100 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-emerald-500">
@@ -44,8 +44,8 @@
 
         <!-- Mobile Menu -->
         <div id="mobile-menu" class="hidden md:hidden bg-emerald-600 mb-2">
-            <a href="/" class="block text-white px-4 py-2 text-sm hover:bg-emerald-700">Beranda</a>
-            <a href="/bookinglap" class="block text-white px-4 py-2 text-sm hover:bg-emerald-700">Booking</a>
+            <a href="/customer/beranda" class="block text-white px-4 py-2 text-sm hover:bg-emerald-700">Beranda</a>
+            <a href="/customer/bookinglap" class="block text-white px-4 py-2 text-sm hover:bg-emerald-700">Booking</a>
             <a href="/riwayat" class="block text-white px-4 py-2 text-sm hover:bg-emerald-700">Riwayat saya</a>
             <a href="/profil" class="block text-white px-4 py-2 text-sm hover:bg-emerald-700">Profil</a>
             <a href="#" onclick="document.getElementById('logout-form').submit()" class="block px-4 py-1 text-red-700 hover:bg-emerald-700 font-bold">Logout</a>
@@ -72,4 +72,3 @@
 </body>
 
 </html>
-  

@@ -39,8 +39,4 @@ Route::middleware(['auth', CheckRole::class.':customer'])->prefix('customer')->g
     Route::get('/bookinglap', [BookingController::class, 'index'])->name('customer.booking');
     Route::post('/bookinglap', [BookingController::class, 'store'])->name('customer.booking.store');
 });
-// Customer Routes
-// Route::middleware(['auth', 'role:customer'])->group(function () {
-
-// });
 
