@@ -37,6 +37,9 @@ Route::middleware(['auth', CheckRole::class.':customer'])->prefix('customer')->g
     })->name('customer.beranda');
 
     Route::get('/bookinglap', [BookingController::class, 'index'])->name('customer.booking');
+    Route::get('/bookinglap/create/{id}', [BookingController::class, 'create'])->name('customer.booking.create');
     Route::post('/bookinglap', [BookingController::class, 'store'])->name('customer.booking.store');
+    Route::get('/bookinglap/detail/{id}', [BookingController::class, 'detail'])->name('customer.detailbooking');
+    
 });
 

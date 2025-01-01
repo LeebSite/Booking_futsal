@@ -11,4 +11,14 @@ class Lapangan extends Model
 
     protected $table = 'lapangan';
     protected $fillable = ['nama_lapangan', 'deskripsi', 'harga_per_jam', 'status', 'foto'];
+
+    public function pesanan()
+    {
+        return $this->hasMany(Pesanan::class, 'id_lapangan');
+    }
+    // public function jadwal()
+    // {
+    //     return $this->hasMany(JadwalLapangan::class, 'id_lapangan');
+    // }
+
 }
