@@ -8,21 +8,22 @@ return new class extends Migration
 {
     public function up(): void
     {
-    Schema::create('pesanan', function (Blueprint $table) {
-        $table->id('id'); // Primary key
-        $table->foreignId('id_pengguna')->constrained('pengguna', 'id'); 
-        $table->foreignId('id_lapangan')->constrained('lapangan', 'id');
-        $table->date('tanggal');
-        $table->time('jam_mulai');
-        $table->time('jam_selesai');
-        $table->integer('jumlah_jam');
-        $table->decimal('total_biaya', 10, 2);
-        $table->string('nama_lengkap');
-        $table->text('alamat');
-        $table->string('no_telepon');
-        $table->enum('status', ['menunggu_konfirmasi', 'diterima', 'ditolak'])->default('menunggu_konfirmasi');
-        $table->timestamps();
-    });
+        Schema::create('pesanan', function (Blueprint $table) {
+            $table->id();
+            $table->unsignedBigInteger('id_lapangan');
+            $table->string('nama_lengkap');
+            $table->text('alamat');
+            $table->string('no_telepon');
+            $table->date('tanggal');
+            $table->string('jam'); // Simpan waktu dalam bentuk string (contoh: "18:00, 19:00")
+            $table->integer('jumlah_jam');
+            $table->integer('total_biaya');
+            $table->string('status')->default('pending');
+            $table->timestamps();
+        
+            $table->foreign('id_lapangan')->references('id')->on('lapangan')->onDelete('cascade');
+        });
+        
 }
 
 

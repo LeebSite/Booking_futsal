@@ -18,11 +18,6 @@
         </div>
 
         <div class="mb-4">
-            <label class="block">Jumlah Jam:</label>
-            <input type="number" name="jumlah_jam" min="1" value="1" class="border rounded w-full p-2">
-        </div>
-
-        <div class="mb-4">
             <label class="block">Nama Lengkap:</label>
             <input type="text" name="nama_lengkap" required class="border rounded w-full p-2">
         </div>
@@ -43,9 +38,18 @@
         </div>
 
         <div class="mb-4">
-            <label class="block">Jam Mulai:</label>
-            <input type="time" name="jam_mulai" required class="border rounded w-full p-2">
-        </div>
+            <label class="block">Jam:</label>
+            <div class="grid grid-cols-4 gap-2">
+                @foreach ($jadwal as $j)
+                    <label>
+                        <input type="checkbox" name="jam[]" value="{{ $j->jam }}" {{ $j->status == 'dipesan' ? 'disabled' : '' }}>
+                        <span class="px-4 py-2 border rounded block text-center {{ $j->status == 'dipesan' ? 'bg-gray-300 text-gray-500' : 'hover:bg-green-200 cursor-pointer' }}">
+                            {{ $j->jam }}
+                        </span>
+                    </label>
+                @endforeach
+            </div>
+        </div>        
 
         <button type="submit" class="bg-indigo-600 text-white px-4 py-2 rounded">Booking Lapangan</button>
     </form>

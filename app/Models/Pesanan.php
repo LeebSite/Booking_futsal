@@ -9,28 +9,27 @@ class Pesanan extends Model
 {
     use HasFactory;
 
+    // Nama tabel di database
     protected $table = 'pesanan';
 
+    // Kolom yang dapat diisi (fillable)
     protected $fillable = [
-        'id_pengguna',
         'id_lapangan',
-        'tanggal',
-        'jam_mulai',
-        'jumlah_jam',
         'nama_lengkap',
         'alamat',
         'no_telepon',
+        'tanggal',
+        'jam',
+        'jumlah_jam',
         'total_biaya',
         'status',
     ];
 
+    /**
+     * Relasi ke model Lapangan.
+     */
     public function lapangan()
     {
-        return $this->belongsTo(Lapangan::class, 'id_lapangan');
-    }
-
-    public function pengguna()
-    {
-        return $this->belongsTo(Pengguna::class, 'id_pengguna');
+        return $this->belongsTo(Lapangan::class, 'id_lapangan', 'id');
     }
 }

@@ -12,8 +12,7 @@ return new class extends Migration
             $table->id('id');
             $table->foreignId('id_lapangan')->constrained('lapangan', 'id'); 
             $table->date('tanggal');
-            $table->time('jam_mulai');
-            $table->time('jam_selesai');
+            $table->time('jam');
             $table->enum('status', ['kosong', 'dipesan'])->default('kosong');
             $table->timestamps();
         });
