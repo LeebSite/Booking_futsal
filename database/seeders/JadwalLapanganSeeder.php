@@ -14,14 +14,16 @@ class JadwalLapanganSeeder extends Seeder
             '13:00', '14:00', '15:00', '16:00', '17:00',
             '18:00', '19:00', '20:00', '21:00', '22:00', '23:00'
         ];
-
-        foreach ($jam as $item) {
-            JadwalLapangan::create([
-                'id_lapangan' => 1, // ID lapangan
-                'tanggal' => now()->toDateString(), // Default tanggal
-                'jam' => $item,
-                'status' => 'kosong',
-            ]);
+    
+        for ($i = 0; $i < 5; $i++) { // Seed untuk 5 hari ke depan
+            foreach ($jam as $item) {
+                JadwalLapangan::create([
+                    'id_lapangan' => 1, // ID lapangan
+                    'tanggal' => now()->addDays($i)->toDateString(),
+                    'jam' => $item,
+                    'status' => 'kosong',
+                ]);
+            }
         }
     }
-}
+}    

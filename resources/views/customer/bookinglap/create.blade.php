@@ -34,8 +34,8 @@
 
         <div class="mb-4">
             <label class="block">Tanggal:</label>
-            <input type="date" name="tanggal" value="{{ now()->toDateString() }}" class="border rounded w-full p-2">
-        </div>
+            <input type="date" name="tanggal" value="{{ $tanggalDipilih }}" class="border rounded w-full p-2" onchange="location.href='?tanggal=' + this.value">
+        </div>        
 
         <div class="mb-4">
             <label class="block">Jam:</label>
@@ -49,7 +49,8 @@
                     </label>
                 @endforeach
             </div>
-        </div>        
+        </div>
+        
 
         <button type="submit" class="bg-indigo-600 text-white px-4 py-2 rounded">Booking Lapangan</button>
     </form>
