@@ -11,7 +11,7 @@ class CheckRole
     public function handle(Request $request, Closure $next, $role)
     {
         if (!Auth::check() || Auth::user()->role !== $role) { // Perbaiki di sini
-            return redirect('/login')->withErrors(['loginError' => 'Anda tidak memiliki akses.']);
+            return redirect('/403')->withErrors(['loginError' => 'Anda tidak memiliki akses.']);
         }
 
         return $next($request);
