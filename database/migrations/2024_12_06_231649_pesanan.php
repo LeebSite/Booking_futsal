@@ -15,7 +15,7 @@ return new class extends Migration
             $table->text('alamat');
             $table->string('no_telepon');
             $table->date('tanggal');
-            $table->string('jam'); // Simpan waktu dalam bentuk string (contoh: "18:00, 19:00")
+            $table->string('jam');
             $table->integer('jumlah_jam');
             $table->integer('total_biaya');
             $table->string('status')->default('pending');

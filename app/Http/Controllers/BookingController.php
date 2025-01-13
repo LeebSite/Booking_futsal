@@ -26,13 +26,27 @@ class BookingController extends Controller
     public function create($id, Request $request)
     {
         $lapangan = Lapangan::findOrFail($id);
-        $tanggalDipilih = $request->query('tanggal', now()->toDateString()); // Ambil tanggal dari parameter atau default hari ini
-        $jadwal = JadwalLapangan::where('id_lapangan', $id)
+        $tanggalDipilih = $request->query('tanggal', now()->toDateString());
+    
+        // Ambil jam yang sudah dipesan pada tanggal tertentu
+        $pesananPadaTanggal = Pesanan::where('id_lapangan', $id)
             ->where('tanggal', $tanggalDipilih)
-            ->get();
-
-        return view('customer.bookinglap.create', compact('lapangan', 'jadwal', 'tanggalDipilih'));
-    }
+            ->pluck('jam');
+    
+        // Jam operasional (hardcoded di frontend/backend)
+        $jamOperasional = [
+            '08:00', '09:00', '10:00', '11:00', '12:00',
+            '13:00', '14:00', '15:00', '16:00', '17:00',
+            '18:00', '19:00', '20:00', '21:00', '22:00',
+        ];
+    
+        // Jam yang tersedia (tidak ada di pesanan)
+        $jamTersedia = array_diff($jamOperasional, $pesananPadaTanggal->flatMap(function ($jam) {
+            return explode(', ', $jam);
+        })->toArray());
+    
+        return view('customer.bookinglap.create', compact('lapangan', 'jamTersedia', 'tanggalDipilih'));
+    }    
 
     // Menyimpan data pesanan baru
     public function store(Request $request)
@@ -45,43 +59,44 @@ class BookingController extends Controller
             'tanggal' => 'required|date',
             'jam' => 'required|array|min:1',
         ]);
-    
-        // Cek apakah jam yang dipilih tersedia
-        $jadwalKosong = JadwalLapangan::where('id_lapangan', $request->id_lapangan)
+
+        // Validasi ketersediaan jam
+        $pesananPadaTanggal = Pesanan::where('id_lapangan', $request->id_lapangan)
             ->where('tanggal', $request->tanggal)
-            ->whereIn('jam', $request->jam)
-            ->where('status', 'kosong')
-            ->count();
-    
-        if ($jadwalKosong !== count($request->jam)) {
-            return back()->withErrors(['jam' => 'Beberapa jam yang dipilih sudah tidak tersedia.']);
+            ->pluck('jam');
+
+        $jamSudahDipesan = $pesananPadaTanggal->flatMap(function ($jam) {
+            return explode(', ', $jam);
+        })->toArray();
+
+        $jamDipilih = $request->jam;
+        foreach ($jamDipilih as $jam) {
+            if (in_array($jam, $jamSudahDipesan)) {
+                return back()->withErrors(['jam' => "Jam $jam sudah dipesan. Silakan pilih jam lain."]);
+            }
         }
-    
-        // Proses penyimpanan pesanan
+
+        // Hitung biaya
         $lapangan = Lapangan::findOrFail($request->id_lapangan);
-        $jumlahJam = count($request->jam);
+        $jumlahJam = count($jamDipilih);
         $totalBiaya = $jumlahJam * $lapangan->harga_per_jam;
-    
-        $pesanan = Pesanan::create([
+
+        // Simpan pesanan
+        Pesanan::create([
             'id_lapangan' => $lapangan->id,
             'nama_lengkap' => $request->nama_lengkap,
             'alamat' => $request->alamat,
             'no_telepon' => $request->no_telepon,
             'tanggal' => $request->tanggal,
-            'jam' => implode(', ', $request->jam),
+            'jam' => implode(', ', $jamDipilih),
             'jumlah_jam' => $jumlahJam,
             'total_biaya' => $totalBiaya,
             'status' => 'pending',
         ]);
-    
-        JadwalLapangan::where('id_lapangan', $lapangan->id)
-            ->where('tanggal', $request->tanggal)
-            ->whereIn('jam', $request->jam)
-            ->update(['status' => 'dipesan']);
-    
+
         return redirect()->route('customer.booking')->with('success', 'Pesanan berhasil dibuat!');
     }
-    
+
 
     // Menampilkan detail pesanan
     public function show($id)

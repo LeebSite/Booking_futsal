@@ -40,17 +40,16 @@
         <div class="mb-4">
             <label class="block">Jam:</label>
             <div class="grid grid-cols-4 gap-2">
-                @foreach ($jadwal as $j)
+                @foreach ($jamTersedia as $jam)
                     <label>
-                        <input type="checkbox" name="jam[]" value="{{ $j->jam }}" {{ $j->status == 'dipesan' ? 'disabled' : '' }}>
-                        <span class="px-4 py-2 border rounded block text-center {{ $j->status == 'dipesan' ? 'bg-gray-300 text-gray-500' : 'hover:bg-green-200 cursor-pointer' }}">
-                            {{ $j->jam }}
+                        <input type="checkbox" name="jam[]" value="{{ $jam }}">
+                        <span class="px-4 py-2 border rounded block text-center hover:bg-green-200 cursor-pointer">
+                            {{ $jam }}
                         </span>
                     </label>
                 @endforeach
             </div>
-        </div>
-        
+        </div>        
 
         <button type="submit" class="bg-indigo-600 text-white px-4 py-2 rounded">Booking Lapangan</button>
     </form>
