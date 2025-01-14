@@ -27,9 +27,35 @@
                 <p class="text-gray-700 mb-2"><strong>Jam:</strong> {{ implode(', ', explode(',', $pesanan->jam)) }} WIB</p>
                 <p class="text-gray-700 mb-4"><strong>Total Bayar:</strong> Rp.{{ number_format($pesanan->total_biaya, 0, ',', '.') }},00</p>
                 <p class="text-yellow-500 font-bold">Status Transaksi: {{ $pesanan->status }}</p>
+
+                <div class="flex justify-between mt-4">
+                    <form action="{{ route('customer.bookinglap.cancel', $pesanan->id) }}" method="POST">
+                        @csrf
+                        @method('DELETE')
+                        <button type="button" class="bg-red-500 text-white py-2 px-4 rounded hover:bg-red-600" onclick="openModal()">
+                            Batalkan Booking
+                        </button>
+                    </form>
+                </div>
+
+                <!-- Modal -->
+                <div id="confirmationModal" class="hidden fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center">
+                    <div class="bg-white rounded-lg p-6">
+                        <h2 class="text-xl font-bold mb-4">Konfirmasi</h2>
+                        <p class="mb-4">Apakah Anda yakin ingin membatalkan pesanan ini?</p>
+                        <div class="flex justify-end">
+                            <button onclick="closeModal()" class="bg-gray-500 text-white px-4 py-2 rounded mr-2">Batal</button>
+                            <form action="{{ route('customer.bookinglap.cancel', $pesanan->id) }}" method="POST">
+                                @csrf
+                                @method('DELETE')
+                                <button type="submit" class="bg-red-500 text-white px-4 py-2 rounded">Ya, Batalkan</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
-        
+
         <!-- Mobile Layout -->
         <div class="flex flex-col md:hidden">
             <img src="{{ asset('storage/'.$pesanan->lapangan->foto) }}" alt="{{ $pesanan->lapangan->nama_lapangan }}" class="w-full h-48 object-cover mb-6">
@@ -48,4 +74,14 @@
         </div>
     </div>
 </div>
+<script>
+    function openModal() {
+        document.getElementById('confirmationModal').classList.remove('hidden');
+    }
+
+    function closeModal() {
+        document.getElementById('confirmationModal').classList.add('hidden');
+    }
+</script>
+
 @endsection

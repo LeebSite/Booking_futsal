@@ -3,7 +3,7 @@
 @section('content')
 <div class="container mx-auto p-5">
     <h1 class="text-2xl font-bold mb-5">Pilih Tanggal</h1>
-    <form method="GET" action="{{ route('customer.booking') }}">
+    <form method="GET" action="{{ route('customer.bookinglap') }}">
         <input type="date" name="tanggal" value="{{ request('tanggal', now()->toDateString()) }}" 
                class="border rounded p-2 mb-5 w-full">
         <button type="submit" class="bg-indigo-600 text-white px-4 py-2 rounded">Cari</button>

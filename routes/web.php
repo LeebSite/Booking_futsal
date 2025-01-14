@@ -36,9 +36,11 @@ Route::middleware(['auth', CheckRole::class.':customer'])->prefix('customer')->g
         return view('customer.beranda');
     })->name('customer.beranda');
 
-    Route::get('/bookinglap', [BookingController::class, 'index'])->name('customer.booking');
+    Route::get('/bookinglap', [BookingController::class, 'index'])->name('customer.bookinglap');
     Route::get('/bookinglap/create/{id}', [BookingController::class, 'create'])->name('customer.booking.create');
     Route::post('/bookinglap', [BookingController::class, 'store'])->name('customer.booking.store');
     Route::get('/bookinglap/detail/{id}', [BookingController::class, 'show'])->name('customer.detailbooking');
+    Route::delete('/bookinglap/cancel/{id}', [BookingController::class, 'cancel'])->name('customer.bookinglap.cancel');
+
 });
 

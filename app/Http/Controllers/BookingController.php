@@ -4,7 +4,6 @@ namespace App\Http\Controllers;
 
 use App\Models\Lapangan;
 use App\Models\Pesanan;
-use App\Models\JadwalLapangan;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -28,19 +27,16 @@ class BookingController extends Controller
         $lapangan = Lapangan::findOrFail($id);
         $tanggalDipilih = $request->query('tanggal', now()->toDateString());
     
-        // Ambil jam yang sudah dipesan pada tanggal tertentu
         $pesananPadaTanggal = Pesanan::where('id_lapangan', $id)
             ->where('tanggal', $tanggalDipilih)
             ->pluck('jam');
     
-        // Jam operasional (hardcoded di frontend/backend)
         $jamOperasional = [
             '08:00', '09:00', '10:00', '11:00', '12:00',
             '13:00', '14:00', '15:00', '16:00', '17:00',
             '18:00', '19:00', '20:00', '21:00', '22:00',
         ];
     
-        // Jam yang tersedia (tidak ada di pesanan)
         $jamTersedia = array_diff($jamOperasional, $pesananPadaTanggal->flatMap(function ($jam) {
             return explode(', ', $jam);
         })->toArray());
@@ -60,7 +56,6 @@ class BookingController extends Controller
             'jam' => 'required|array|min:1',
         ]);
 
-        // Validasi ketersediaan jam
         $pesananPadaTanggal = Pesanan::where('id_lapangan', $request->id_lapangan)
             ->where('tanggal', $request->tanggal)
             ->pluck('jam');
@@ -76,12 +71,10 @@ class BookingController extends Controller
             }
         }
 
-        // Hitung biaya
         $lapangan = Lapangan::findOrFail($request->id_lapangan);
         $jumlahJam = count($jamDipilih);
         $totalBiaya = $jumlahJam * $lapangan->harga_per_jam;
 
-        // Simpan pesanan
         $pesanan = Pesanan::create([
             'id_lapangan' => $lapangan->id,
             'nama_lengkap' => $request->nama_lengkap,
@@ -92,12 +85,19 @@ class BookingController extends Controller
             'jumlah_jam' => $jumlahJam,
             'total_biaya' => $totalBiaya,
             'status' => 'pending',
-    ]);
+        ]);
 
-        // Redirect ke halaman detail pesanan
         return redirect()->route('customer.detailbooking', $pesanan->id)->with('success', 'Pesanan berhasil dibuat!');
     }
 
+    // Membatalkan pesanan
+    public function cancel($id)
+    {
+        $pesanan = Pesanan::findOrFail($id);
+        $pesanan->delete();
+
+        return redirect()->route('customer.bookinglap')->with('success', 'Pesanan berhasil dibatalkan.');
+    }
 
     // Menampilkan detail pesanan
     public function show($id)
