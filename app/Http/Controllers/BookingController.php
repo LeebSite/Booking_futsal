@@ -82,7 +82,7 @@ class BookingController extends Controller
         $totalBiaya = $jumlahJam * $lapangan->harga_per_jam;
 
         // Simpan pesanan
-        Pesanan::create([
+        $pesanan = Pesanan::create([
             'id_lapangan' => $lapangan->id,
             'nama_lengkap' => $request->nama_lengkap,
             'alamat' => $request->alamat,
@@ -92,9 +92,10 @@ class BookingController extends Controller
             'jumlah_jam' => $jumlahJam,
             'total_biaya' => $totalBiaya,
             'status' => 'pending',
-        ]);
+    ]);
 
-        return redirect()->route('customer.booking')->with('success', 'Pesanan berhasil dibuat!');
+        // Redirect ke halaman detail pesanan
+        return redirect()->route('customer.detailbooking', $pesanan->id)->with('success', 'Pesanan berhasil dibuat!');
     }
 
 

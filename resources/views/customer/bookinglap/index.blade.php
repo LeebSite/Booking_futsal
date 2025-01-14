@@ -19,7 +19,7 @@
             <p class="text-gray-600 mt-2">Jadwal Terisi:</p>
             <ul>
                 @foreach($item->pesanan as $pesanan)
-                <li>{{ $pesanan->jam_mulai }} - {{ $pesanan->jam_selesai }}</li>
+                <li>{{ $pesanan->jam }}</li>
                 @endforeach
             </ul>
             <a href="{{ route('customer.booking.create', $item->id) }}" 

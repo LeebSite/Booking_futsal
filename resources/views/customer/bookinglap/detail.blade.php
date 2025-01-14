@@ -3,6 +3,11 @@
 @section('content')
 <div class="container mx-auto p-5">
     <h1 class="text-2xl font-bold mb-5">Detail Booking</h1>
+    @if(session('success'))
+        <div class="bg-green-500 text-white p-4 rounded mb-4">
+            {{ session('success') }}
+        </div>
+    @endif
     <div class="bg-white shadow-md rounded p-6">
         <p><strong>Kode Transaksi:</strong> #{{ $pesanan->id }}</p>
         <img src="{{ asset('storage/'.$pesanan->lapangan->foto) }}" alt="{{ $pesanan->lapangan->nama_lapangan }}" class="rounded w-full h-48 object-cover my-4">
