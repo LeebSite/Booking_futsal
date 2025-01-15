@@ -7,7 +7,7 @@ use App\Models\Pesanan;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
-class BookingController extends Controller
+class CustomerBookingController extends Controller
 {
     // Menampilkan daftar lapangan berdasarkan tanggal yang dipilih
     public function index(Request $request)

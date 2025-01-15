@@ -5,7 +5,7 @@ use App\Http\Middleware\CheckRole; // Pastikan ini ada
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\LandingController;
 use App\Http\Controllers\LapanganController;
-use App\Http\Controllers\BookingController;
+use App\Http\Controllers\CustomerBookingController;
 
 Route::get('/', [LandingController::class, 'index']);
 
@@ -36,11 +36,11 @@ Route::middleware(['auth', CheckRole::class.':customer'])->prefix('customer')->g
         return view('customer.beranda');
     })->name('customer.beranda');
 
-    Route::get('/bookinglap', [BookingController::class, 'index'])->name('customer.bookinglap');
-    Route::get('/bookinglap/create/{id}', [BookingController::class, 'create'])->name('customer.booking.create');
-    Route::post('/bookinglap', [BookingController::class, 'store'])->name('customer.booking.store');
-    Route::get('/bookinglap/detail/{id}', [BookingController::class, 'show'])->name('customer.detailbooking');
-    Route::delete('/bookinglap/cancel/{id}', [BookingController::class, 'cancel'])->name('customer.bookinglap.cancel');
+    Route::get('/bookinglap', [CustomerBookingController::class, 'index'])->name('customer.bookinglap');
+    Route::get('/bookinglap/create/{id}', [CustomerBookingController::class, 'create'])->name('customer.booking.create');
+    Route::post('/bookinglap', [CustomerBookingController::class, 'store'])->name('customer.booking.store');
+    Route::get('/bookinglap/detail/{id}', [CustomerBookingController::class, 'show'])->name('customer.detailbooking');
+    Route::delete('/bookinglap/cancel/{id}', [CustomerBookingController::class, 'cancel'])->name('customer.bookinglap.cancel');
 
 });
 
