@@ -24,7 +24,9 @@
                 <div class="hidden md:flex items-center space-x-1">
                     <a href="/admin/beranda" class="text-white hover:bg-emerald-700 px-3 py-2 rounded-md text-sm font-semibold">Beranda</a>
                     <a href="/admin/lapangan" class="text-white hover:bg-emerald-700 px-3 py-2 rounded-md text-sm font-semibold">Lapangan</a>
-                    <a href="/admin/pesanan" class="text-white hover:bg-emerald-700 px-3 py-2 rounded-md text-sm font-semibold">Pesanan</a>
+                    <a href="/admin/booking" class="text-white hover:bg-emerald-700 px-3 py-2 rounded-md text-sm font-semibold">
+                        Pesanan
+                    </a>
                     <a href="/admin/laporan" class="text-white hover:bg-emerald-700 px-3 py-2 rounded-md text-sm font-semibold">Laporan</a>
                     <a href="/profil" class="text-white hover:bg-emerald-700 px-3 py-2 rounded-2xl text-sm font-medium"><i class="fas fa-user"></i></a>
                     <a href="#" onclick="document.getElementById('logout-form').submit()" class="ml-4 px-4 py-2 rounded-md text-sm font-semibold text-emerald-600 bg-white hover:bg-emerald-100 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-emerald-500">
@@ -48,7 +50,9 @@
         <div id="mobile-menu" class="hidden md:hidden bg-emerald-600 mb-2">
             <a href="/admin/beranda" class="block text-white px-4 py-2 text-sm hover:bg-emerald-700">Beranda</a>
             <a href="/admin/lapangan" class="block text-white px-4 py-2 text-sm hover:bg-emerald-700">Lapangan</a>
-            <a href="/admin/pesanan" class="block text-white px-4 py-2 text-sm hover:bg-emerald-700">Pesanan</a>
+            <a href="/admin/booking" class="text-white hover:bg-emerald-700 px-3 py-2 rounded-md text-sm font-semibold">
+                Pesanan
+            </a>            
             <a href="/admin/laporan" class="block text-white px-4 py-2 text-sm hover:bg-emerald-700">Laporan</a>
             <a href="#" onclick="document.getElementById('logout-form').submit()" class="block px-4 py-1 text-red-700 hover:bg-emerald-700 font-bold">Logout</a>
             <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
