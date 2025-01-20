@@ -25,10 +25,6 @@ Route::middleware(['auth', CheckRole::class.':admin'])->prefix('admin')->group(f
     })->name('admin.beranda');
 
     Route::resource('lapangan', LapanganController::class);
-    
-    // Route::get('/pesanan', function () {
-    //     return view('admin.pesanan');
-    // })->name('admin.pesanan');
 
     Route::get('booking', [AdminBookingController::class, 'index'])->name('admin.booking.index');
     Route::post('booking/{id}/accept', [AdminBookingController::class, 'accept'])->name('admin.booking.accept');
