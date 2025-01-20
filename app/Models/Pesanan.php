@@ -22,6 +22,7 @@ class Pesanan extends Model
         'jam',
         'jumlah_jam',
         'total_biaya',
+        'bukti_pembayaran',
         'status',
     ];
 
