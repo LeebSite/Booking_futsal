@@ -6,6 +6,7 @@ use App\Http\Controllers\AuthController;
 use App\Http\Controllers\LandingController;
 use App\Http\Controllers\LapanganController;
 use App\Http\Controllers\CustomerBookingController;
+use App\Http\Controllers\AdminBookingController;
 
 Route::get('/', [LandingController::class, 'index']);
 
@@ -25,9 +26,16 @@ Route::middleware(['auth', CheckRole::class.':admin'])->prefix('admin')->group(f
 
     Route::resource('lapangan', LapanganController::class);
     
-    Route::get('/pesanan', function () {
-        return view('admin.pesanan');
-    })->name('admin.pesanan');
+    // Route::get('/pesanan', function () {
+    //     return view('admin.pesanan');
+    // })->name('admin.pesanan');
+
+    Route::get('booking', [AdminBookingController::class, 'index'])->name('admin.booking.index');
+    Route::post('booking/{id}/accept', [AdminBookingController::class, 'accept'])->name('admin.booking.accept');
+    Route::post('booking/{id}/reject', [AdminBookingController::class, 'reject'])->name('admin.booking.reject');
+    Route::get('/admin/booking/detail', [AdminBookingController::class, 'detail'])->name('admin.booking.detail');
+
+
 });
 
 // Customer Routes
@@ -43,4 +51,3 @@ Route::middleware(['auth', CheckRole::class.':customer'])->prefix('customer')->g
     Route::delete('/bookinglap/cancel/{id}', [CustomerBookingController::class, 'cancel'])->name('customer.bookinglap.cancel');
 
 });
-
