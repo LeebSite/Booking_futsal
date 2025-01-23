@@ -33,14 +33,14 @@ class AdminBookingController extends Controller
     }
 
     public function detail()
-{
-    // Mengambil pesanan dengan status "accepted" dan mengelompokkan berdasarkan hari
-    $pesananDiterima = Pesanan::where('status', 'accepted')
-        ->orderBy('tanggal')
-        ->get()
-        ->groupBy('tanggal'); // Mengelompokkan berdasarkan tanggal
-
-    return view('admin.booking.detail', compact('pesananDiterima'));
-}
+    {
+        // Mengambil pesanan dengan status "accepted" dan mengelompokkan berdasarkan hari
+        $pesananDiterima = Pesanan::where('status', 'accepted')
+            ->orderBy('tanggal')
+            ->get()
+            ->groupBy('tanggal'); // Mengelompokkan berdasarkan tanggal
+    
+        return view('admin.booking.detail', compact('pesananDiterima'));
+    }    
 
 }
