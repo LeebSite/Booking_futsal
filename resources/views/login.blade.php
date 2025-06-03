@@ -50,7 +50,7 @@
         <div class="text-center">
             <p class="text-sm text-gray-600">
                 Belum memiliki akun? 
-                <a href="/daftar" class="font-medium text-indigo-600 hover:text-indigo-500">
+                <a href="{{ route('register') }}" class="font-medium text-indigo-600 hover:text-indigo-500">
                     Daftar
                 </a> 
                 terlebih dahulu
