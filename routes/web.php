@@ -16,7 +16,8 @@ Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
 
 Route::get('/register', function () {
     return view('register');
-});
+})->name('register');
+Route::post('/register', [AuthController::class, 'store'])->name('register.store');
 
 // Admin Routes
 Route::middleware(['auth', CheckRole::class.':admin'])->prefix('admin')->group(function () {
