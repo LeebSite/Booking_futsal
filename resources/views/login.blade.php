@@ -13,6 +13,11 @@
             <h2 class="mt-6 text-center text-3xl font-extrabold text-gray-900">
                 Masuk ke Andi's Futsal
             </h2>
+            @if (session('success'))
+            <div class="mt-3 bg-green-100 border border-green-400 text-green-700 px-4 py-3 rounded relative" role="alert">
+                <span class="block sm:inline">{{ session('success') }}</span>
+            </div>
+            @endif
         </div>
         <form class="mt-8 space-y-6" action="{{ route('autentic') }}" method="POST">
             @csrf
