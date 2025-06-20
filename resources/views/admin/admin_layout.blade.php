@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="{{ asset('css/global.css') }}">
 </head>
 <body class="bg-gray-50 m-0 p-0">
+    @include('components.loading-screen')
     <!-- Navbar -->
     <nav class="bg-emerald-600 shadow-md fixed w-full top-0 z-10">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -68,6 +69,11 @@
 
     <!-- JavaScript for Hamburger Menu Toggle -->
     <script>
+        // Show loading
+        showLoading();
+
+        // Hide loading
+        hideLoading();
         const toggleButton = document.getElementById('menu-toggle');
         const mobileMenu = document.getElementById('mobile-menu');
         

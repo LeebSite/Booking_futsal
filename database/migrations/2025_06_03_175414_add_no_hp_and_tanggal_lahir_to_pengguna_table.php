@@ -12,7 +12,11 @@ return new class extends Migration
     public function up(): void
     {
         Schema::table('pengguna', function (Blueprint $table) {
-            //
+            $table->string('no_hp', 15)->nullable()->after('email');
+            $table->date('tanggal_lahir')->nullable()->after('no_hp');
+            $table->timestamp('email_verified_at')->nullable()->after('tanggal_lahir');
+            $table->rememberToken()->after('role');
+            $table->softDeletes()->after('updated_at');
         });
     }
 
@@ -22,7 +26,8 @@ return new class extends Migration
     public function down(): void
     {
         Schema::table('pengguna', function (Blueprint $table) {
-            //
+            $table->dropColumn(['no_hp', 'tanggal_lahir', 'email_verified_at', 'remember_token']);
+            $table->dropSoftDeletes();
         });
     }
 };
