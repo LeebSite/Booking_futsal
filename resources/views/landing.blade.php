@@ -347,7 +347,7 @@
             <!-- Features Grid -->
             <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
                 <!-- Feature 1 -->
-                <div class="group p-8 bg-gradient-to-br from-slate-50 to-white rounded-2xl border border-slate-200 hover:border-primary-300 hover:shadow-xl transition-all duration-300 hover-lift">
+                <div class="group p-8 bg-gradient-to-br from-slate-50 to-white rounded-2xl border border-slate-200 hover:border-primary-300 hover:shadow-xl transition-all duration-300 hover-lift card-hover loading">
                     <div class="w-16 h-16 bg-gradient-to-br from-primary-500 to-primary-600 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
                         <i class="fas fa-trophy text-white text-2xl"></i>
                     </div>
@@ -356,7 +356,7 @@
                 </div>
 
                 <!-- Feature 2 -->
-                <div class="group p-8 bg-gradient-to-br from-slate-50 to-white rounded-2xl border border-slate-200 hover:border-primary-300 hover:shadow-xl transition-all duration-300 hover-lift">
+                <div class="group p-8 bg-gradient-to-br from-slate-50 to-white rounded-2xl border border-slate-200 hover:border-primary-300 hover:shadow-xl transition-all duration-300 hover-lift card-hover loading">
                     <div class="w-16 h-16 bg-gradient-to-br from-blue-500 to-blue-600 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
                         <i class="fas fa-clock text-white text-2xl"></i>
                     </div>
