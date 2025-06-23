@@ -217,6 +217,6 @@ class SuperadminController extends Controller
 
         $recentUsers = Pengguna::orderBy('created_at', 'desc')->limit(10)->get();
 
-        return view('Superadmin.dashboard', compact('stats', 'recentUsers'));
+        return view('Superadmin.beranda', compact('stats', 'recentUsers'));
     }
 }

@@ -22,9 +22,7 @@ Route::post('/register', [AuthController::class, 'store'])->name('register.store
 
 //------- Superadmin Routes
 Route::middleware(['auth', CheckRole::class.':superadmin'])->prefix('superadmin')->group(function () {
-    Route::get('/beranda', function () {
-        return view('superadmin.beranda');
-    })->name('superadmin.beranda');
+    Route::get('/beranda', [SuperadminController::class, 'dashboard'])->name('superadmin.beranda');
 
     // Dashboard
     Route::get('/dashboard', [SuperadminController::class, 'dashboard'])->name('superadmin.dashboard');
@@ -40,9 +38,7 @@ Route::middleware(['auth', CheckRole::class.':superadmin'])->prefix('superadmin'
 
 //------- Admin Routes
 Route::middleware(['auth', CheckRole::class.':admin'])->prefix('admin')->group(function () {
-    Route::get('/beranda', function () {
-        return view('admin.beranda');
-    })->name('admin.beranda');
+    Route::get('/beranda', [AdminBookingController::class, 'dashboard'])->name('admin.beranda');
 
     Route::resource('lapangan', LapanganController::class);
 

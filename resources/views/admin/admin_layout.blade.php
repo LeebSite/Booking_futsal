@@ -1,84 +1,216 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="id">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Admin Beranda - Andi's Futsal</title>
+    <title>@yield('title', 'Admin Dashboard - Andi\'s Futsal')</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
     <link rel="stylesheet" href="{{ asset('css/global.css') }}">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: {
+                            50: '#f0fdf4',
+                            100: '#dcfce7',
+                            200: '#bbf7d0',
+                            300: '#86efac',
+                            400: '#4ade80',
+                            500: '#22c55e',
+                            600: '#16a34a',
+                            700: '#15803d',
+                            800: '#166534',
+                            900: '#14532d',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: #f8fafc;
+        }
+        .sidebar-item {
+            transition: all 0.2s ease;
+        }
+        .sidebar-item:hover {
+            background: rgba(34, 197, 94, 0.1);
+            color: #16a34a;
+        }
+        .sidebar-item.active {
+            background: #22c55e;
+            color: white;
+        }
+        .card-shadow {
+            box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+        }
+        .card-shadow:hover {
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+        }
+    </style>
 </head>
-<body class="bg-gray-50 m-0 p-0">
+<body class="bg-gray-50">
     @include('components.loading-screen')
-    <!-- Navbar -->
-    <nav class="bg-emerald-600 shadow-md fixed w-full top-0 z-10">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex justify-between h-16">
-                <!-- Logo -->
-                <div class="flex-shrink-0 flex items-center">
-                    <a href="/" class="text-2xl font-bold text-white">
-                        Andi's Futsal
+
+    <div class="min-h-screen flex">
+        <!-- Sidebar -->
+        <div id="sidebar" class="w-64 bg-white border-r border-gray-200 min-h-screen transition-transform transform -translate-x-full lg:translate-x-0 fixed lg:relative z-30">
+            <!-- Logo & Title -->
+            <div class="p-6 border-b border-gray-100">
+                <div class="flex items-center space-x-3">
+                    <div class="w-8 h-8 bg-primary-500 rounded-lg flex items-center justify-center">
+                        <i class="fas fa-futbol text-white text-sm"></i>
+                    </div>
+                    <div>
+                        <h1 class="text-lg font-semibold text-gray-900">Andi's Futsal</h1>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Navigation -->
+            <nav class="mt-8 px-4">
+                <div class="space-y-1">
+                    <p class="text-xs font-semibold text-gray-400 uppercase tracking-wider px-3 mb-3">HOME</p>
+                    <a href="/admin/beranda"
+                       class="sidebar-item flex items-center space-x-3 px-3 py-2 rounded-lg text-sm font-medium text-gray-700 {{ request()->is('admin/beranda') ? 'active' : '' }}">
+                        <i class="fas fa-home w-5"></i>
+                        <span>Dashboard</span>
                     </a>
                 </div>
 
-                <!-- Menu Links -->
-                <div class="hidden md:flex items-center space-x-1">
-                    <a href="/admin/beranda" class="text-white hover:bg-emerald-700 px-3 py-2 rounded-md text-sm font-semibold">Beranda</a>
-                    <a href="/admin/lapangan" class="text-white hover:bg-emerald-700 px-3 py-2 rounded-md text-sm font-semibold">Lapangan</a>
-                    <a href="/admin/booking" class="text-white hover:bg-emerald-700 px-3 py-2 rounded-md text-sm font-semibold">
-                        Pesanan
+                <div class="space-y-1 mt-8">
+                    <p class="text-xs font-semibold text-gray-400 uppercase tracking-wider px-3 mb-3">UTILITIES</p>
+                    <a href="/admin/lapangan"
+                       class="sidebar-item flex items-center space-x-3 px-3 py-2 rounded-lg text-sm font-medium text-gray-700 {{ request()->is('admin/lapangan*') ? 'active' : '' }}">
+                        <i class="fas fa-map-marked-alt w-5"></i>
+                        <span>Lapangan</span>
                     </a>
-                    <a href="/admin/laporan" class="text-white hover:bg-emerald-700 px-3 py-2 rounded-md text-sm font-semibold">Laporan</a>
-                    <a href="/profil" class="text-white hover:bg-emerald-700 px-3 py-2 rounded-2xl text-sm font-medium"><i class="fas fa-user"></i></a>
-                    <a href="#" onclick="document.getElementById('logout-form').submit()" class="ml-4 px-4 py-2 rounded-md text-sm font-semibold text-emerald-600 bg-white hover:bg-emerald-100 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-emerald-500">
-                        <i class="fas fa-sign-out-alt"></i> Logout
+
+                    <a href="/admin/booking"
+                       class="sidebar-item flex items-center space-x-3 px-3 py-2 rounded-lg text-sm font-medium text-gray-700 {{ request()->is('admin/booking*') ? 'active' : '' }}">
+                        <i class="fas fa-calendar-check w-5"></i>
+                        <span>Pesanan</span>
+                        <span class="ml-auto bg-red-500 text-white text-xs px-2 py-1 rounded-full">3</span>
                     </a>
-                    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                        @csrf
-                    </form>                    
+
+                    <a href="/admin/laporan"
+                       class="sidebar-item flex items-center space-x-3 px-3 py-2 rounded-lg text-sm font-medium text-gray-700 {{ request()->is('admin/laporan*') ? 'active' : '' }}">
+                        <i class="fas fa-chart-line w-5"></i>
+                        <span>Laporan</span>
+                    </a>
                 </div>
 
-                <!-- Hamburger Menu for Mobile -->
-                <div class="flex md:hidden items-center">
-                    <button id="menu-toggle" class="text-white focus:outline-none">
-                        <i class="fas fa-bars text-2xl"></i>
+                <div class="space-y-1 mt-8">
+                    <p class="text-xs font-semibold text-gray-400 uppercase tracking-wider px-3 mb-3">AUTH</p>
+                    <a href="/profil"
+                       class="sidebar-item flex items-center space-x-3 px-3 py-2 rounded-lg text-sm font-medium text-gray-700">
+                        <i class="fas fa-user w-5"></i>
+                        <span>Profil</span>
+                    </a>
+                </div>
+            </nav>
+
+            <!-- Profile Section -->
+            <div class="absolute bottom-0 w-64 border-t border-gray-100 bg-white">
+                <div class="flex items-center p-4 space-x-3">
+                    <img src="https://ui-avatars.com/api/?name=Admin&background=22c55e&color=fff" class="w-10 h-10 rounded-lg">
+                    <div class="flex-1">
+                        <p class="text-sm font-medium text-gray-900">{{ Auth::user()->nama ?? 'Admin' }}</p>
+                        <p class="text-xs text-gray-500">Administrator</p>
+                    </div>
+                    <button onclick="document.getElementById('logout-form').submit()"
+                           class="p-2 rounded-lg hover:bg-gray-100 transition-colors duration-200">
+                        <i class="fas fa-sign-out-alt text-gray-400 hover:text-gray-600"></i>
                     </button>
                 </div>
             </div>
         </div>
 
-        <!-- Mobile Menu -->
-        <div id="mobile-menu" class="hidden md:hidden bg-emerald-600 mb-2">
-            <a href="/admin/beranda" class="block text-white px-4 py-2 text-sm hover:bg-emerald-700">Beranda</a>
-            <a href="/admin/lapangan" class="block text-white px-4 py-2 text-sm hover:bg-emerald-700">Lapangan</a>
-            <a href="/admin/booking" class="text-white hover:bg-emerald-700 px-3 py-2 rounded-md text-sm font-semibold">
-                Pesanan
-            </a>            
-            <a href="/admin/laporan" class="block text-white px-4 py-2 text-sm hover:bg-emerald-700">Laporan</a>
-            <a href="#" onclick="document.getElementById('logout-form').submit()" class="block px-4 py-1 text-red-700 hover:bg-emerald-700 font-bold">Logout</a>
-            <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                @csrf   
-            </form>            
-        </div>
-    </nav>
+        <!-- Main Content -->
+        <div class="flex-1 lg:ml-0">
+            <!-- Top Navigation -->
+            <div class="bg-white border-b border-gray-200">
+                <div class="px-6 py-4 flex items-center justify-between">
+                    <div class="flex items-center space-x-4">
+                        <button id="hamburger" class="lg:hidden p-2 rounded-lg hover:bg-gray-100 transition-colors duration-200" onclick="toggleSidebar()">
+                            <i class="fas fa-bars text-gray-600"></i>
+                        </button>
+                        <div>
+                            <h1 class="text-2xl font-semibold text-gray-900">@yield('header', 'Dashboard')</h1>
+                        </div>
+                    </div>
+                    <div class="flex items-center space-x-4">
+                        <button class="p-2 rounded-lg hover:bg-gray-100 transition-colors duration-200">
+                            <i class="fas fa-search text-gray-400"></i>
+                        </button>
+                        <button class="relative p-2 rounded-lg hover:bg-gray-100 transition-colors duration-200">
+                            <i class="fas fa-bell text-gray-400"></i>
+                            <span class="absolute -top-1 -right-1 w-4 h-4 bg-red-500 text-white text-xs rounded-full flex items-center justify-center">3</span>
+                        </button>
+                        <div class="w-8 h-8 bg-primary-500 rounded-lg flex items-center justify-center">
+                            <i class="fas fa-user text-white text-sm"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
 
-    <!-- Main Content -->
-    <div class="container mx-auto mt-20 px-3">
-        @yield('content')
+            <!-- Content Section -->
+            <div class="p-6 max-w-7xl mx-auto">
+                @yield('content')
+            </div>
+        </div>
     </div>
 
-    <!-- JavaScript for Hamburger Menu Toggle -->
+    <!-- Overlay for mobile -->
+    <div id="sidebar-overlay" class="fixed inset-0 bg-black bg-opacity-50 z-20 hidden lg:hidden" onclick="toggleSidebar()"></div>
+
+    <!-- Logout Form -->
+    <form id="logout-form" action="{{ route('logout') }}" method="POST" class="hidden">
+        @csrf
+    </form>
+
+    <!-- JavaScript -->
     <script>
         // Show loading
         showLoading();
 
         // Hide loading
         hideLoading();
-        const toggleButton = document.getElementById('menu-toggle');
-        const mobileMenu = document.getElementById('mobile-menu');
-        
-        toggleButton.addEventListener('click', () => {
-            mobileMenu.classList.toggle('hidden');
+
+        function toggleSidebar() {
+            const sidebar = document.getElementById('sidebar');
+            const overlay = document.getElementById('sidebar-overlay');
+
+            sidebar.classList.toggle('-translate-x-full');
+            overlay.classList.toggle('hidden');
+        }
+
+        // Close sidebar when clicking outside on mobile
+        document.addEventListener('click', function(event) {
+            const sidebar = document.getElementById('sidebar');
+            const hamburger = document.getElementById('hamburger');
+
+            if (window.innerWidth < 1024 &&
+                !sidebar.contains(event.target) &&
+                !hamburger.contains(event.target) &&
+                !sidebar.classList.contains('-translate-x-full')) {
+                toggleSidebar();
+            }
+        });
+
+        // Handle window resize
+        window.addEventListener('resize', function() {
+            const sidebar = document.getElementById('sidebar');
+            const overlay = document.getElementById('sidebar-overlay');
+
+            if (window.innerWidth >= 1024) {
+                sidebar.classList.remove('-translate-x-full');
+                overlay.classList.add('hidden');
+            }
         });
     </script>
 </body>

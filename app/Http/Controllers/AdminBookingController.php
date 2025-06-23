@@ -149,27 +149,45 @@ class AdminBookingController extends Controller
     public function dashboard()
     {
         $today = now()->toDateString();
+        $yesterday = now()->subDay()->toDateString();
         $thisMonth = now()->format('Y-m');
 
         $stats = [
-            'pending_today' => Pesanan::where('status', Pesanan::STATUS_PENDING)
-                ->whereDate('created_at', $today)->count(),
+            'bookings_today' => Pesanan::whereDate('created_at', $today)->count(),
+            'bookings_yesterday' => Pesanan::whereDate('created_at', $yesterday)->count(),
+            'revenue_today' => Pesanan::where('status', Pesanan::STATUS_ACCEPTED)
+                ->whereDate('tanggal', $today)
+                ->sum('total_biaya'),
+            'revenue_yesterday' => Pesanan::where('status', Pesanan::STATUS_ACCEPTED)
+                ->whereDate('tanggal', $yesterday)
+                ->sum('total_biaya'),
+            'active_courts' => \App\Models\Lapangan::where('status', 'aktif')->count(),
+            'total_courts' => \App\Models\Lapangan::count(),
+            'pending_bookings' => Pesanan::where('status', Pesanan::STATUS_PENDING)->count(),
             'accepted_today' => Pesanan::where('status', Pesanan::STATUS_ACCEPTED)
+                ->whereDate('tanggal', $today)->count(),
+            'rejected_today' => Pesanan::where('status', Pesanan::STATUS_REJECTED)
                 ->whereDate('tanggal', $today)->count(),
             'total_revenue_month' => Pesanan::where('status', Pesanan::STATUS_ACCEPTED)
                 ->whereYear('tanggal', now()->year)
                 ->whereMonth('tanggal', now()->month)
                 ->sum('total_biaya'),
-            'total_bookings_month' => Pesanan::whereYear('created_at', now()->year)
-                ->whereMonth('created_at', now()->month)
-                ->count(),
         ];
+
+        // Calculate percentage changes
+        $stats['bookings_change'] = $stats['bookings_yesterday'] > 0
+            ? round((($stats['bookings_today'] - $stats['bookings_yesterday']) / $stats['bookings_yesterday']) * 100, 1)
+            : 0;
+
+        $stats['revenue_change'] = $stats['revenue_yesterday'] > 0
+            ? round((($stats['revenue_today'] - $stats['revenue_yesterday']) / $stats['revenue_yesterday']) * 100, 1)
+            : 0;
 
         $recentBookings = Pesanan::with(['lapangan', 'pengguna'])
             ->orderBy('created_at', 'desc')
-            ->limit(10)
+            ->limit(5)
             ->get();
 
-        return view('admin.dashboard', compact('stats', 'recentBookings'));
+        return view('admin.beranda', compact('stats', 'recentBookings'));
     }
 }
