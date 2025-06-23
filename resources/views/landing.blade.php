@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Andi's Futsal - Premium Futsal Experience in Pekanbaru</title>
-    <meta name="description" content="Experience the best futsal courts in Pekanbaru. Book your game today at Andi's Futsal - where champions are made.">
+    <title>Andi's Futsal - Pengalaman Futsal Premium di Pekanbaru</title>
+    <meta name="description" content="Rasakan lapangan futsal terbaik di Pekanbaru. Booking permainan Anda hari ini di Andi's Futsal - tempat para juara dibentuk.">
 
     <!-- Tailwind CSS with custom config -->
     <script src="https://cdn.tailwindcss.com"></script>
@@ -208,28 +208,28 @@
                             <h1 class="text-2xl font-bold bg-gradient-to-r from-primary-600 to-primary-800 bg-clip-text text-transparent">
                                 Andi's Futsal
                             </h1>
-                            <p class="text-xs text-slate-500 font-medium">Premium Experience</p>
+                            <p class="text-xs text-slate-500 font-medium">Pengalaman Premium</p>
                         </div>
                     </div>
                 </div>
 
                 <!-- Desktop Navigation -->
                 <div class="hidden md:flex items-center space-x-8">
-                    <a href="#home" class="text-slate-700 hover:text-primary-600 font-medium transition-colors duration-200">Home</a>
-                    <a href="#features" class="text-slate-700 hover:text-primary-600 font-medium transition-colors duration-200">Features</a>
+                    <a href="#home" class="text-slate-700 hover:text-primary-600 font-medium transition-colors duration-200">Beranda</a>
+                    <a href="#features" class="text-slate-700 hover:text-primary-600 font-medium transition-colors duration-200">Fitur</a>
                     <a href="#info" class="text-slate-700 hover:text-primary-600 font-medium transition-colors duration-200">Info</a>
-                    <a href="#contact" class="text-slate-700 hover:text-primary-600 font-medium transition-colors duration-200">Contact</a>
+                    <a href="#contact" class="text-slate-700 hover:text-primary-600 font-medium transition-colors duration-200">Kontak</a>
                 </div>
 
                 <!-- CTA Buttons -->
                 <div class="flex items-center space-x-4">
                     <a href="/login" class="hidden sm:inline-flex items-center px-4 py-2 text-sm font-medium text-primary-700 bg-primary-50 hover:bg-primary-100 rounded-lg transition-all duration-200 hover-lift">
                         <i class="fas fa-sign-in-alt mr-2"></i>
-                        Sign In
+                        Masuk
                     </a>
                     <a href="/register" class="inline-flex items-center px-6 py-2.5 text-sm font-semibold text-white bg-gradient-to-r from-primary-600 to-primary-700 hover:from-primary-700 hover:to-primary-800 rounded-lg shadow-lg hover:shadow-xl transition-all duration-200 hover-lift">
                         <i class="fas fa-user-plus mr-2"></i>
-                        Get Started
+                        Mulai Sekarang
                     </a>
 
                     <!-- Mobile menu button -->
@@ -243,13 +243,13 @@
         <!-- Mobile Navigation -->
         <div class="md:hidden hidden bg-white/95 backdrop-blur-lg border-t border-slate-200" id="mobile-menu">
             <div class="px-4 py-6 space-y-4">
-                <a href="#home" class="block text-slate-700 hover:text-primary-600 font-medium py-2">Home</a>
-                <a href="#features" class="block text-slate-700 hover:text-primary-600 font-medium py-2">Features</a>
+                <a href="#home" class="block text-slate-700 hover:text-primary-600 font-medium py-2">Beranda</a>
+                <a href="#features" class="block text-slate-700 hover:text-primary-600 font-medium py-2">Fitur</a>
                 <a href="#info" class="block text-slate-700 hover:text-primary-600 font-medium py-2">Info</a>
-                <a href="#contact" class="block text-slate-700 hover:text-primary-600 font-medium py-2">Contact</a>
+                <a href="#contact" class="block text-slate-700 hover:text-primary-600 font-medium py-2">Kontak</a>
                 <div class="pt-4 border-t border-slate-200">
-                    <a href="/login" class="block w-full text-center px-4 py-2 text-primary-700 bg-primary-50 rounded-lg mb-2">Sign In</a>
-                    <a href="/register" class="block w-full text-center px-4 py-2 text-white bg-gradient-to-r from-primary-600 to-primary-700 rounded-lg">Get Started</a>
+                    <a href="/login" class="block w-full text-center px-4 py-2 text-primary-700 bg-primary-50 rounded-lg mb-2">Masuk</a>
+                    <a href="/register" class="block w-full text-center px-4 py-2 text-white bg-gradient-to-r from-primary-600 to-primary-700 rounded-lg">Mulai Sekarang</a>
                 </div>
             </div>
         </div>
@@ -273,12 +273,12 @@
                 <!-- Badge -->
                 <div class="inline-flex items-center px-4 py-2 bg-white/20 backdrop-blur-sm rounded-full text-white/90 text-sm font-medium mb-8 glass-effect">
                     <i class="fas fa-star text-yellow-300 mr-2"></i>
-                    Premium Futsal Experience in Pekanbaru
+                    Pengalaman Futsal Premium di Pekanbaru
                 </div>
 
                 <!-- Main heading -->
                 <h1 class="text-5xl md:text-7xl lg:text-8xl font-black text-white mb-6 text-shadow">
-                    <span class="block animate-slide-up">Welcome to</span>
+                    <span class="block animate-slide-up">Selamat Datang di</span>
                     <span class="block bg-gradient-to-r from-white to-primary-100 bg-clip-text text-transparent animate-slide-up" style="animation-delay: 0.2s">
                         Andi's Futsal
                     </span>
@@ -286,18 +286,18 @@
 
                 <!-- Subtitle -->
                 <p class="text-xl md:text-2xl text-white/90 max-w-4xl mx-auto mb-12 leading-relaxed animate-slide-up" style="animation-delay: 0.4s">
-                    Experience the ultimate futsal destination in Pekanbaru. Premium courts, professional facilities, and unforgettable moments await you.
+                    Rasakan destinasi futsal terbaik di Pekanbaru. Lapangan premium, fasilitas profesional, dan momen tak terlupakan menanti Anda.
                 </p>
 
                 <!-- CTA Buttons -->
                 <div class="flex flex-col sm:flex-row gap-4 justify-center items-center animate-slide-up" style="animation-delay: 0.6s">
                     <a href="#features" class="group inline-flex items-center px-8 py-4 bg-white text-primary-700 font-semibold rounded-xl shadow-2xl hover:shadow-3xl transition-all duration-300 hover-lift">
                         <i class="fas fa-play mr-3 group-hover:translate-x-1 transition-transform duration-200"></i>
-                        Explore Features
+                        Jelajahi Fitur
                     </a>
                     <a href="/register" class="group inline-flex items-center px-8 py-4 bg-primary-500/20 text-white font-semibold rounded-xl border-2 border-white/30 backdrop-blur-sm hover:bg-white/10 transition-all duration-300 hover-lift">
                         <i class="fas fa-calendar-plus mr-3 group-hover:scale-110 transition-transform duration-200"></i>
-                        Book Now
+                        Booking Sekarang
                     </a>
                 </div>
 
@@ -305,11 +305,11 @@
                 <div class="grid grid-cols-2 md:grid-cols-4 gap-8 mt-20 animate-slide-up" style="animation-delay: 0.8s">
                     <div class="text-center floating">
                         <div class="text-3xl md:text-4xl font-bold text-white mb-2" data-count="500">0+</div>
-                        <div class="text-white/80 text-sm uppercase tracking-wider">Happy Players</div>
+                        <div class="text-white/80 text-sm uppercase tracking-wider">Pemain Senang</div>
                     </div>
                     <div class="text-center floating" style="animation-delay: 0.5s">
                         <div class="text-3xl md:text-4xl font-bold text-white mb-2">24/7</div>
-                        <div class="text-white/80 text-sm uppercase tracking-wider">Available</div>
+                        <div class="text-white/80 text-sm uppercase tracking-wider">Tersedia</div>
                     </div>
                     <div class="text-center floating" style="animation-delay: 1s">
                         <div class="text-3xl md:text-4xl font-bold text-white mb-2">5★</div>
@@ -317,7 +317,7 @@
                     </div>
                     <div class="text-center floating" style="animation-delay: 1.5s">
                         <div class="text-3xl md:text-4xl font-bold text-white mb-2" data-count="3">0</div>
-                        <div class="text-white/80 text-sm uppercase tracking-wider">Premium Courts</div>
+                        <div class="text-white/80 text-sm uppercase tracking-wider">Lapangan Premium</div>
                     </div>
                 </div>
             </div>
@@ -337,10 +337,10 @@
             <!-- Section Header -->
             <div class="text-center mb-20">
                 <h2 class="text-4xl md:text-5xl font-bold text-slate-900 mb-6">
-                    Why Choose <span class="bg-gradient-to-r from-primary-600 to-primary-800 bg-clip-text text-transparent">Andi's Futsal?</span>
+                    Mengapa Pilih <span class="bg-gradient-to-r from-primary-600 to-primary-800 bg-clip-text text-transparent">Andi's Futsal?</span>
                 </h2>
                 <p class="text-xl text-slate-600 max-w-3xl mx-auto">
-                    Experience premium futsal facilities with world-class amenities designed for champions
+                    Rasakan fasilitas futsal premium dengan amenitas kelas dunia yang dirancang untuk para juara
                 </p>
             </div>
 
@@ -351,8 +351,8 @@
                     <div class="w-16 h-16 bg-gradient-to-br from-primary-500 to-primary-600 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
                         <i class="fas fa-trophy text-white text-2xl"></i>
                     </div>
-                    <h3 class="text-xl font-bold text-slate-900 mb-4">Premium Courts</h3>
-                    <p class="text-slate-600 leading-relaxed">Professional-grade synthetic grass courts with optimal drainage and lighting systems for the perfect game experience.</p>
+                    <h3 class="text-xl font-bold text-slate-900 mb-4">Lapangan Premium</h3>
+                    <p class="text-slate-600 leading-relaxed">Lapangan rumput sintetis kelas profesional dengan sistem drainase dan pencahayaan optimal untuk pengalaman bermain yang sempurna.</p>
                 </div>
 
                 <!-- Feature 2 -->
@@ -360,8 +360,8 @@
                     <div class="w-16 h-16 bg-gradient-to-br from-blue-500 to-blue-600 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
                         <i class="fas fa-clock text-white text-2xl"></i>
                     </div>
-                    <h3 class="text-xl font-bold text-slate-900 mb-4">24/7 Availability</h3>
-                    <p class="text-slate-600 leading-relaxed">Book your game anytime with our extended operating hours from 7 AM to midnight, 7 days a week.</p>
+                    <h3 class="text-xl font-bold text-slate-900 mb-4">Tersedia 24/7</h3>
+                    <p class="text-slate-600 leading-relaxed">Booking permainan Anda kapan saja dengan jam operasional diperpanjang dari jam 7 pagi hingga tengah malam, 7 hari seminggu.</p>
                 </div>
 
                 <!-- Feature 3 -->
@@ -369,8 +369,8 @@
                     <div class="w-16 h-16 bg-gradient-to-br from-purple-500 to-purple-600 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
                         <i class="fas fa-mobile-alt text-white text-2xl"></i>
                     </div>
-                    <h3 class="text-xl font-bold text-slate-900 mb-4">Easy Booking</h3>
-                    <p class="text-slate-600 leading-relaxed">Simple online booking system with instant confirmation and flexible payment options for your convenience.</p>
+                    <h3 class="text-xl font-bold text-slate-900 mb-4">Booking Mudah</h3>
+                    <p class="text-slate-600 leading-relaxed">Sistem booking online yang sederhana dengan konfirmasi instan dan opsi pembayaran fleksibel untuk kemudahan Anda.</p>
                 </div>
 
                 <!-- Feature 4 -->
@@ -378,8 +378,8 @@
                     <div class="w-16 h-16 bg-gradient-to-br from-orange-500 to-orange-600 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
                         <i class="fas fa-users text-white text-2xl"></i>
                     </div>
-                    <h3 class="text-xl font-bold text-slate-900 mb-4">Community</h3>
-                    <p class="text-slate-600 leading-relaxed">Join our vibrant futsal community with regular tournaments, leagues, and social events for all skill levels.</p>
+                    <h3 class="text-xl font-bold text-slate-900 mb-4">Komunitas</h3>
+                    <p class="text-slate-600 leading-relaxed">Bergabunglah dengan komunitas futsal yang dinamis dengan turnamen reguler, liga, dan acara sosial untuk semua tingkat keahlian.</p>
                 </div>
 
                 <!-- Feature 5 -->
@@ -387,8 +387,8 @@
                     <div class="w-16 h-16 bg-gradient-to-br from-red-500 to-red-600 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
                         <i class="fas fa-shield-alt text-white text-2xl"></i>
                     </div>
-                    <h3 class="text-xl font-bold text-slate-900 mb-4">Safety First</h3>
-                    <p class="text-slate-600 leading-relaxed">Comprehensive safety measures with first aid facilities, security systems, and regular equipment maintenance.</p>
+                    <h3 class="text-xl font-bold text-slate-900 mb-4">Keamanan Utama</h3>
+                    <p class="text-slate-600 leading-relaxed">Langkah keamanan komprehensif dengan fasilitas P3K, sistem keamanan, dan perawatan peralatan rutin.</p>
                 </div>
 
                 <!-- Feature 6 -->
@@ -396,8 +396,8 @@
                     <div class="w-16 h-16 bg-gradient-to-br from-teal-500 to-teal-600 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
                         <i class="fas fa-star text-white text-2xl"></i>
                     </div>
-                    <h3 class="text-xl font-bold text-slate-900 mb-4">Premium Service</h3>
-                    <p class="text-slate-600 leading-relaxed">Exceptional customer service with professional staff, clean facilities, and complimentary amenities.</p>
+                    <h3 class="text-xl font-bold text-slate-900 mb-4">Layanan Premium</h3>
+                    <p class="text-slate-600 leading-relaxed">Layanan pelanggan yang luar biasa dengan staf profesional, fasilitas bersih, dan amenitas gratis.</p>
                 </div>
             </div>
         </div>
@@ -409,10 +409,10 @@
             <!-- Section Header -->
             <div class="text-center mb-16">
                 <h2 class="text-4xl md:text-5xl font-bold text-slate-900 mb-6">
-                    Visit <span class="bg-gradient-to-r from-primary-600 to-primary-800 bg-clip-text text-transparent">Our Location</span>
+                    Kunjungi <span class="bg-gradient-to-r from-primary-600 to-primary-800 bg-clip-text text-transparent">Lokasi Kami</span>
                 </h2>
                 <p class="text-xl text-slate-600 max-w-3xl mx-auto">
-                    Find us in the heart of Pekanbaru with easy access and ample parking
+                    Temukan kami di jantung Pekanbaru dengan akses mudah dan parkir yang luas
                 </p>
             </div>
 
@@ -423,13 +423,13 @@
                     <div class="w-16 h-16 bg-gradient-to-br from-primary-500 to-primary-600 rounded-xl flex items-center justify-center mb-6">
                         <i class="fas fa-map-marker-alt text-white text-2xl"></i>
                     </div>
-                    <h3 class="text-xl font-bold text-slate-900 mb-4">Location</h3>
+                    <h3 class="text-xl font-bold text-slate-900 mb-4">Lokasi</h3>
                     <p class="text-slate-600 leading-relaxed mb-4">
                         Jl. Kamboja belakang gedung putih, Simpang Baru, Kec. Tampan, Kota Pekanbaru, Riau 28292
                     </p>
                     <a href="https://maps.app.goo.gl/wps5tGj4hJPZDFpN8" target="_blank" class="inline-flex items-center text-primary-600 hover:text-primary-700 font-medium">
                         <i class="fas fa-external-link-alt mr-2"></i>
-                        View on Maps
+                        Lihat di Maps
                     </a>
                 </div>
 
@@ -438,14 +438,14 @@
                     <div class="w-16 h-16 bg-gradient-to-br from-blue-500 to-blue-600 rounded-xl flex items-center justify-center mb-6">
                         <i class="fas fa-clock text-white text-2xl"></i>
                     </div>
-                    <h3 class="text-xl font-bold text-slate-900 mb-4">Operating Hours</h3>
+                    <h3 class="text-xl font-bold text-slate-900 mb-4">Jam Operasional</h3>
                     <div class="space-y-2 text-slate-600">
                         <div class="flex justify-between">
-                            <span>Monday - Sunday</span>
+                            <span>Senin - Minggu</span>
                             <span class="font-medium">07:00 - 00:00</span>
                         </div>
                         <div class="flex justify-between">
-                            <span>Peak Hours</span>
+                            <span>Jam Sibuk</span>
                             <span class="font-medium">18:00 - 22:00</span>
                         </div>
                     </div>
@@ -456,7 +456,7 @@
                     <div class="w-16 h-16 bg-gradient-to-br from-purple-500 to-purple-600 rounded-xl flex items-center justify-center mb-6">
                         <i class="fas fa-phone text-white text-2xl"></i>
                     </div>
-                    <h3 class="text-xl font-bold text-slate-900 mb-4">Contact Us</h3>
+                    <h3 class="text-xl font-bold text-slate-900 mb-4">Hubungi Kami</h3>
                     <div class="space-y-3 text-slate-600">
                         <div class="flex items-center">
                             <i class="fas fa-phone-alt text-primary-500 mr-3"></i>
@@ -478,10 +478,10 @@
             <!-- Section Header -->
             <div class="text-center mb-16">
                 <h2 class="text-4xl md:text-5xl font-bold text-slate-900 mb-6">
-                    What Our <span class="bg-gradient-to-r from-primary-600 to-primary-800 bg-clip-text text-transparent">Players Say</span>
+                    Apa Kata <span class="bg-gradient-to-r from-primary-600 to-primary-800 bg-clip-text text-transparent">Pemain Kami</span>
                 </h2>
                 <p class="text-xl text-slate-600 max-w-3xl mx-auto">
-                    Join hundreds of satisfied players who have made Andi's Futsal their favorite destination
+                    Bergabunglah dengan ratusan pemain yang puas yang telah menjadikan Andi's Futsal sebagai destinasi favorit mereka
                 </p>
             </div>
 

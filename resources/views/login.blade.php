@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sign In - Andi's Futsal</title>
-    <meta name="description" content="Sign in to your Andi's Futsal account and book your next game.">
+    <title>Masuk - Andi's Futsal</title>
+    <meta name="description" content="Masuk ke akun Andi's Futsal Anda dan booking permainan selanjutnya.">
 
     <!-- Tailwind CSS with custom config -->
     <script src="https://cdn.tailwindcss.com"></script>
@@ -100,9 +100,9 @@
                     <h1 class="text-3xl font-black mb-2 text-shadow">
                         Andi's Futsal
                     </h1>
-                    <p class="text-base text-white/90 font-medium mb-2">Premium Experience</p>
+                    <p class="text-base text-white/90 font-medium mb-2">Pengalaman Premium</p>
                     <p class="text-sm text-white/70 max-w-xs mx-auto leading-relaxed">
-                        Professional futsal courts with modern facilities for the ultimate playing experience
+                        Lapangan futsal profesional dengan fasilitas modern untuk pengalaman bermain terbaik
                     </p>
                 </div>
 
@@ -113,8 +113,8 @@
                             <i class="fas fa-trophy text-white text-xs"></i>
                         </div>
                         <div class="text-left">
-                            <h3 class="font-medium text-xs">Premium Courts</h3>
-                            <p class="text-white/70 text-xs">Professional facilities</p>
+                            <h3 class="font-medium text-xs">Lapangan Premium</h3>
+                            <p class="text-white/70 text-xs">Fasilitas profesional</p>
                         </div>
                     </div>
                     <div class="flex items-center space-x-3">
@@ -122,8 +122,8 @@
                             <i class="fas fa-clock text-white text-xs"></i>
                         </div>
                         <div class="text-left">
-                            <h3 class="font-medium text-xs">24/7 Available</h3>
-                            <p class="text-white/70 text-xs">Book anytime</p>
+                            <h3 class="font-medium text-xs">24/7 Tersedia</h3>
+                            <p class="text-white/70 text-xs">Booking kapan saja</p>
                         </div>
                     </div>
                     <div class="flex items-center space-x-3">
@@ -131,8 +131,8 @@
                             <i class="fas fa-users text-white text-xs"></i>
                         </div>
                         <div class="text-left">
-                            <h3 class="font-medium text-xs">Community</h3>
-                            <p class="text-white/70 text-xs">500+ players</p>
+                            <h3 class="font-medium text-xs">Komunitas</h3>
+                            <p class="text-white/70 text-xs">500+ pemain</p>
                         </div>
                     </div>
                 </div>
@@ -141,7 +141,7 @@
                 <div class="mt-6">
                     <a href="/" class="inline-flex items-center px-3 py-1.5 bg-white/20 backdrop-blur-sm text-white font-medium text-xs rounded-md border border-white/30 hover:bg-white/30 transition-all duration-300 group">
                         <i class="fas fa-arrow-left mr-1.5 text-xs group-hover:-translate-x-1 transition-transform duration-200"></i>
-                        Back to Home
+                        Kembali ke Beranda
                     </a>
                 </div>
             </div>
@@ -174,8 +174,8 @@
                         <div class="w-10 h-10 bg-gradient-to-br from-primary-500 to-primary-700 rounded-lg flex items-center justify-center mx-auto mb-2 shadow-lg lg:hidden">
                             <i class="fas fa-sign-in-alt text-white text-sm"></i>
                         </div>
-                        <h2 class="text-xl lg:text-2xl font-bold text-slate-900 mb-1">Welcome Back</h2>
-                        <p class="text-slate-600 text-xs">Sign in to your account to continue</p>
+                        <h2 class="text-xl lg:text-2xl font-bold text-slate-900 mb-1">Selamat Datang Kembali</h2>
+                        <p class="text-slate-600 text-xs">Masuk ke akun Anda untuk melanjutkan</p>
                     </div>
 
                 <!-- Success Message -->
@@ -203,20 +203,20 @@
                             </div>
                             <input id="username" name="username" type="text" value="{{ old('username') }}" required
                                 class="input-focus block w-full pl-8 pr-3 py-2 text-xs border border-slate-200 rounded-md bg-white/50 backdrop-blur-sm placeholder-slate-400 text-slate-900 focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-primary-500 transition-all duration-300"
-                                placeholder="Enter your username">
+                                placeholder="Masukkan username Anda">
                         </div>
                     </div>
 
                     <!-- Password Field -->
                     <div class="space-y-1.5">
-                        <label for="password" class="block text-xs font-medium text-slate-700">Password</label>
+                        <label for="password" class="block text-xs font-medium text-slate-700">Kata Sandi</label>
                         <div class="relative">
                             <div class="absolute inset-y-0 left-0 pl-2.5 flex items-center pointer-events-none">
                                 <i class="fas fa-lock text-slate-400 text-xs"></i>
                             </div>
                             <input id="password" name="password" type="password" required
                                 class="input-focus block w-full pl-8 pr-10 py-2 text-xs border border-slate-200 rounded-md bg-white/50 backdrop-blur-sm placeholder-slate-400 text-slate-900 focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-primary-500 transition-all duration-300"
-                                placeholder="Enter your password">
+                                placeholder="Masukkan kata sandi Anda">
                             <button type="button" id="togglePassword" class="absolute inset-y-0 right-0 pr-2.5 flex items-center">
                                 <i class="fas fa-eye text-slate-400 hover:text-slate-600 transition-colors duration-200 text-xs"></i>
                             </button>
@@ -239,7 +239,7 @@
                     <button type="submit"
                         class="btn-hover w-full bg-gradient-to-r from-primary-600 to-primary-700 hover:from-primary-700 hover:to-primary-800 text-white font-medium py-2 px-4 rounded-md shadow-lg focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-2 transition-all duration-300 text-xs">
                         <i class="fas fa-sign-in-alt mr-1.5 text-xs"></i>
-                        Sign In
+                        Masuk
                     </button>
                 </form>
 
@@ -250,7 +250,7 @@
                             <div class="w-full border-t border-slate-200"></div>
                         </div>
                         <div class="relative flex justify-center text-xs">
-                            <span class="px-2 bg-white text-slate-500 font-medium">Or continue with</span>
+                            <span class="px-2 bg-white text-slate-500 font-medium">Atau lanjutkan dengan</span>
                         </div>
                     </div>
                 </div>
@@ -266,14 +266,14 @@
                         <path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"/>
                         <path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/>
                     </svg>
-                    Login with Google
+                    Masuk dengan Google
                 </button>
 
                 <!-- Register Link -->
                 <div class="text-center">
-                    <p class="text-xs text-slate-500 mb-2">Don't have an account?</p>
+                    <p class="text-xs text-slate-500 mb-2">Belum punya akun?</p>
                     <a href="{{ route('register') }}" class="text-xs text-primary-600 hover:text-primary-700 font-medium hover:underline transition-colors duration-200">
-                        Create New Account
+                        Buat Akun Baru
                     </a>
                 </div>
                 </div>
