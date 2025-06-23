@@ -16,72 +16,67 @@
         </div>
     </div>
 
-    <!-- Table Content -->
-    <div class="overflow-x-auto">
-        <div class="inline-block min-w-full align-middle">
-            <table class="min-w-full divide-y divide-gray-200">
-                <thead class="bg-gray-50">
-                    <tr>
-                        <th class="px-3 md:px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">Name</th>
-                        <th class="px-3 md:px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase hidden md:table-cell">Username</th>
-                        <th class="px-3 md:px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase hidden md:table-cell">Email</th>
-                        <th class="px-3 md:px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">Role</th>
-                        <th class="px-3 md:px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">Actions</th>
-                    </tr>
-                </thead>
-                <tbody class="bg-white divide-y divide-gray-200">
-                    @foreach($users as $user)
-                    <tr class="hover:bg-gray-50">
-                        <td class="px-3 md:px-6 py-4 whitespace-nowrap">
-                            <div class="flex items-center">
-                                <div class="h-8 w-8 md:h-10 md:w-10 flex-shrink-0">
-                                    <img class="h-full w-full rounded-full" 
-                                        src="https://ui-avatars.com/api/?name={{ urlencode($user->nama) }}" 
-                                        alt="">
-                                </div>
-                                <div class="ml-4">
-                                    <div class="text-sm md:text-base font-medium text-gray-900">{{ $user->nama }}</div>
-                                    <div class="text-sm text-gray-500 md:hidden">{{ $user->username }}</div>
-                                </div>
-                            </div>
-                        </td>
-                        <td class="px-3 md:px-6 py-4 whitespace-nowrap hidden md:table-cell">
-                            <div class="text-sm text-gray-900">{{ $user->username }}</div>
-                        </td>
-                        <td class="px-3 md:px-6 py-4 whitespace-nowrap hidden md:table-cell">
-                            <div class="text-sm text-gray-900">{{ $user->email }}</div>
-                        </td>
-                        <td class="px-3 md:px-6 py-4 whitespace-nowrap">
-                            <span class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full 
-                                {{ $user->role === 'superadmin' ? 'bg-purple-100 text-purple-800' : 
-                                  ($user->role === 'admin' ? 'bg-green-100 text-green-800' : 
-                                    'bg-blue-100 text-blue-800') }}">
-                                {{ ucfirst($user->role) }}
-                            </span>
-                        </td>
-                        <td class="px-3 md:px-6 py-4 whitespace-nowrap text-sm font-medium">
-                            <div class="flex space-x-3">
-                                <button onclick="editUser({{ $user->id }})" 
-                                        class="text-indigo-600 hover:text-indigo-900">
-                                    <i class="fas fa-edit"></i>
-                                </button>
-                                <button onclick="deleteUser({{ $user->id }})" 
-                                        class="text-red-600 hover:text-red-900">
-                                    <i class="fas fa-trash"></i>
-                                </button>
-                            </div>
-                        </td>
-                    </tr>
-                    @endforeach
-                </tbody>
-            </table>
-        </div>
-    </div>
+    <!-- Compact Table -->
+    <x-compact-table
+        :headers="['#', 'User', 'Username', 'Email', 'Role', 'Joined', 'Actions']"
+        searchable="true"
+        searchPlaceholder="Cari user...">
 
-    <!-- Pagination -->
-    <div class="px-3 md:px-6 py-3 border-t border-gray-200">
-        {{ $users->links() }}
-    </div>
+        @foreach($users as $index => $user)
+            <x-compact-table-row>
+                <x-compact-table-cell>
+                    <span class="table-row-number">{{ $index + 1 }}</span>
+                </x-compact-table-cell>
+                <x-compact-table-cell>
+                    <x-compact-table-avatar
+                        :src="'https://ui-avatars.com/api/?name=' . urlencode($user->nama) . '&background=22c55e&color=fff'"
+                        :name="$user->nama"
+                        :alt="$user->nama">
+                        <div class="text-xs text-gray-500">ID: {{ $user->id }}</div>
+                    </x-compact-table-avatar>
+                </x-compact-table-cell>
+                <x-compact-table-cell>
+                    <div class="font-medium text-gray-800 text-xs">{{ $user->username }}</div>
+                </x-compact-table-cell>
+                <x-compact-table-cell>
+                    <div class="text-gray-700 text-xs">{{ $user->email }}</div>
+                </x-compact-table-cell>
+                <x-compact-table-cell>
+                    @php
+                        $roleStatus = match($user->role) {
+                            'superadmin' => 'superadmin',
+                            'admin' => 'admin',
+                            'customer' => 'user',
+                            default => 'user'
+                        };
+                    @endphp
+                    <x-compact-status-badge :status="$roleStatus" type="pill">
+                        {{ ucfirst($user->role) }}
+                    </x-compact-status-badge>
+                </x-compact-table-cell>
+                <x-compact-table-cell>
+                    <div class="text-gray-700 font-medium text-xs">{{ $user->created_at->format('d M Y') }}</div>
+                    <div class="text-xs text-gray-500">{{ $user->created_at->diffForHumans() }}</div>
+                </x-compact-table-cell>
+                <x-compact-table-cell>
+                    <x-compact-action-buttons>
+                        <button onclick="editUser({{ $user->id }})" class="compact-btn compact-btn-sm compact-btn-warning" title="Edit">
+                            <i class="fas fa-edit"></i>
+                        </button>
+                        @if($user->role !== 'superadmin')
+                        <button onclick="deleteUser({{ $user->id }})" class="compact-btn compact-btn-sm compact-btn-danger" title="Delete">
+                            <i class="fas fa-trash"></i>
+                        </button>
+                        @endif
+                    </x-compact-action-buttons>
+                </x-compact-table-cell>
+            </x-compact-table-row>
+        @endforeach
+
+        <x-slot name="pagination">
+            {{ $users->links() }}
+        </x-slot>
+    </x-compact-table>
 </div>
 
 <!-- Delete Confirmation Modal -->

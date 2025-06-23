@@ -74,3 +74,10 @@ Route::middleware(['auth', CheckRole::class.':customer'])->prefix('customer')->g
     // Booking history
     Route::get('/riwayat', [CustomerBookingController::class, 'history'])->name('customer.booking.history');
 });
+
+// Debug route untuk testing gambar (hanya untuk development)
+if (config('app.debug')) {
+    Route::get('/debug/images', function () {
+        return view('debug.image-test');
+    })->name('debug.images');
+}

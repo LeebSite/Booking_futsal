@@ -11,52 +11,71 @@
             </div>
         @endif
 
-        <a href="{{ route('lapangan.create') }}" class="button-tambah bg-blue-600 hover:bg-blue-700 text-white mb-4 inline-block">
-            <i class="fas fa-plus-circle"></i> Tambah Lapangan
-        </a>
-        <div class="overflow-x-auto">
-            <table class="min-w-full border-collapse border border-gray-300 rounded-lg overflow-hidden">
-                <thead class="bg-gray-50">
-                    <tr>
-                        <th class="border border-gray-300 px-3 py-3 text-left text-gray-700 bg-gray-200">Nama Lapangan</th>
-                        <th class="border border-gray-300 px-3 py-3 text-left text-gray-700 bg-gray-200">Deskripsi</th>
-                        <th class="border border-gray-300 px-3 py-3 text-left text-gray-700 bg-gray-200">Harga Per Jam</th>
-                        <th class="border border-gray-300 px-3 py-3 text-left text-gray-700 bg-gray-200">Status</th>
-                        <th class="border border-gray-300 px-3 py-3 text-left text-gray-700 bg-gray-200">Foto</th>
-                        <th class="border border-gray-300 px-3 py-3 text-left text-gray-700 bg-gray-200">Aksi</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    @foreach ($lapangan as $item)
-                    <tr class="hover:bg-gray-100">
-                        <td class="border border-gray-200 px-3 py-1">{{ $item->nama_lapangan }}</td>
-                        <td class="border border-gray-200 px-3 py-1">{{ $item->deskripsi }}</td>
-                        <td class="border border-gray-200 px-3 py-1">Rp {{ number_format($item->harga_per_jam, 0, ',', '.') }}</td>
-                        <td class="border border-gray-200 px-3 py-1">{{ ucfirst($item->status) }}</td>
-                        <td class="border border-gray-200 px-4 py-0">
-                            @if($item->foto)
-                                <img src="{{ Storage::url($item->foto) }}" alt="{{ $item->nama_lapangan }}" style="height: 100px; object-fit: cover;">
-                            @else
-                                <span class="text-gray-500">Tidak ada foto</span>
-                            @endif
-                        </td>
-                        <td class="border border-gray-200 px-2 py-2 flex gap-2">
-                            <a href="{{ route('lapangan.edit', $item->id) }}" class="button-ubah bg-yellow-500 text-white hover:bg-yellow-600">
-                                <i class="fas fa-edit"></i> Ubah
+        <div class="flex justify-between items-center mb-4">
+            <div></div>
+            <a href="{{ route('lapangan.create') }}" class="compact-btn compact-btn-md compact-btn-primary">
+                <i class="fas fa-plus mr-1"></i> Tambah Lapangan
+            </a>
+        </div>
+
+        <!-- Compact Table -->
+        <x-compact-table
+            :headers="['#', 'Lapangan', 'Deskripsi', 'Harga', 'Status', 'Foto', 'Aksi']"
+            searchable="true"
+            searchPlaceholder="Cari lapangan...">
+
+            @foreach ($lapangan as $index => $item)
+                <x-compact-table-row>
+                    <x-compact-table-cell>
+                        <span class="table-row-number">{{ $index + 1 }}</span>
+                    </x-compact-table-cell>
+                    <x-compact-table-cell>
+                        <x-compact-table-avatar
+                            :name="$item->nama_lapangan"
+                            icon="fas fa-futbol"
+                            color="green">
+                            <div class="text-xs text-gray-500">ID: {{ $item->id }}</div>
+                        </x-compact-table-avatar>
+                    </x-compact-table-cell>
+                    <x-compact-table-cell>
+                        <div class="max-w-xs">
+                            <p class="text-gray-700 truncate text-xs">{{ $item->deskripsi }}</p>
+                        </div>
+                    </x-compact-table-cell>
+                    <x-compact-table-cell>
+                        <x-compact-table-number :value="$item->harga_per_jam" format="currency" />
+                        <div class="text-xs text-gray-500 mt-0.5">per jam</div>
+                    </x-compact-table-cell>
+                    <x-compact-table-cell>
+                        <x-compact-status-badge :status="$item->status" type="pill">
+                            {{ ucfirst($item->status) }}
+                        </x-compact-status-badge>
+                    </x-compact-table-cell>
+                    <x-compact-table-cell>
+                        <x-safe-image
+                            :src="$item->foto"
+                            :alt="$item->nama_lapangan"
+                            class="w-8 h-8 object-cover rounded shadow-sm"
+                            :showLink="true" />
+                    </x-compact-table-cell>
+                    <x-compact-table-cell>
+                        <x-compact-action-buttons>
+                            <a href="{{ route('lapangan.edit', $item->id) }}" class="compact-btn compact-btn-sm compact-btn-warning" title="Edit">
+                                <i class="fas fa-edit"></i>
                             </a>
-                            <form action="{{ route('lapangan.destroy', $item->id) }}" method="POST" onsubmit="return confirm('Yakin ingin menghapus?')">
+                            <form action="{{ route('lapangan.destroy', $item->id) }}" method="POST" class="inline">
                                 @csrf
                                 @method('DELETE')
-                                <button class="button-hapus bg-red-500 text-white hover:bg-red-600">
-                                    <i class="fas fa-trash"></i> Hapus
+                                <button type="submit" class="compact-btn compact-btn-sm compact-btn-danger" title="Hapus"
+                                        onclick="return confirm('Yakin ingin menghapus lapangan ini?')">
+                                    <i class="fas fa-trash"></i>
                                 </button>
                             </form>
-                        </td>
-                    </tr>
-                    @endforeach
-                </tbody>
-            </table>   
-        </div>
+                        </x-compact-action-buttons>
+                    </x-compact-table-cell>
+                </x-compact-table-row>
+            @endforeach
+        </x-compact-table>
     </div>
 </div>
 @endsection
