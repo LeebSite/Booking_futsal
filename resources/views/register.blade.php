@@ -115,53 +115,56 @@
             </div>
 
             <!-- Content -->
-            <div class="relative z-10 flex flex-col justify-center items-center p-12 text-white text-center">
+            <div class="relative z-10 flex flex-col justify-center items-center h-full p-8 text-white text-center">
                 <!-- Logo -->
                 <div class="mb-8">
-                    <div class="w-24 h-24 bg-white/20 backdrop-blur-sm rounded-3xl flex items-center justify-center mx-auto mb-6 shadow-2xl">
-                        <i class="fas fa-futbol text-white text-4xl"></i>
+                    <div class="w-16 h-16 bg-white/20 backdrop-blur-sm rounded-xl flex items-center justify-center mx-auto mb-3 shadow-2xl">
+                        <i class="fas fa-futbol text-white text-2xl"></i>
                     </div>
-                    <h1 class="text-5xl font-black mb-4 text-shadow">
+                    <h1 class="text-3xl font-black mb-2 text-shadow">
                         Andi's Futsal
                     </h1>
-                    <p class="text-xl text-white/90 font-medium">Premium Experience</p>
+                    <p class="text-base text-white/90 font-medium mb-2">Premium Experience</p>
+                    <p class="text-sm text-white/70 max-w-xs mx-auto leading-relaxed">
+                        Professional futsal courts with modern facilities for the ultimate playing experience
+                    </p>
                 </div>
 
                 <!-- Benefits -->
-                <div class="space-y-6 max-w-sm">
-                    <div class="flex items-center space-x-4">
-                        <div class="w-12 h-12 bg-white/20 rounded-xl flex items-center justify-center">
-                            <i class="fas fa-user-plus text-white text-lg"></i>
+                <div class="space-y-3 max-w-xs">
+                    <div class="flex items-center space-x-3">
+                        <div class="w-8 h-8 bg-white/20 rounded-lg flex items-center justify-center flex-shrink-0">
+                            <i class="fas fa-user-plus text-white text-xs"></i>
                         </div>
                         <div class="text-left">
-                            <h3 class="font-semibold">Join Community</h3>
-                            <p class="text-white/80 text-sm">Connect with 500+ players</p>
+                            <h3 class="font-medium text-xs">Join Community</h3>
+                            <p class="text-white/70 text-xs">Connect with 500+ players</p>
                         </div>
                     </div>
-                    <div class="flex items-center space-x-4">
-                        <div class="w-12 h-12 bg-white/20 rounded-xl flex items-center justify-center">
-                            <i class="fas fa-calendar-check text-white text-lg"></i>
+                    <div class="flex items-center space-x-3">
+                        <div class="w-8 h-8 bg-white/20 rounded-lg flex items-center justify-center flex-shrink-0">
+                            <i class="fas fa-calendar-check text-white text-xs"></i>
                         </div>
                         <div class="text-left">
-                            <h3 class="font-semibold">Easy Booking</h3>
-                            <p class="text-white/80 text-sm">Reserve courts instantly</p>
+                            <h3 class="font-medium text-xs">Easy Booking</h3>
+                            <p class="text-white/70 text-xs">Reserve courts instantly</p>
                         </div>
                     </div>
-                    <div class="flex items-center space-x-4">
-                        <div class="w-12 h-12 bg-white/20 rounded-xl flex items-center justify-center">
-                            <i class="fas fa-star text-white text-lg"></i>
+                    <div class="flex items-center space-x-3">
+                        <div class="w-8 h-8 bg-white/20 rounded-lg flex items-center justify-center flex-shrink-0">
+                            <i class="fas fa-star text-white text-xs"></i>
                         </div>
                         <div class="text-left">
-                            <h3 class="font-semibold">Premium Access</h3>
-                            <p class="text-white/80 text-sm">Exclusive member benefits</p>
+                            <h3 class="font-medium text-xs">Premium Access</h3>
+                            <p class="text-white/70 text-xs">Exclusive member benefits</p>
                         </div>
                     </div>
                 </div>
 
                 <!-- Back to Home -->
-                <div class="mt-12">
-                    <a href="/" class="inline-flex items-center px-6 py-3 bg-white/20 backdrop-blur-sm text-white font-semibold rounded-xl border border-white/30 hover:bg-white/30 transition-all duration-300 group">
-                        <i class="fas fa-arrow-left mr-2 group-hover:-translate-x-1 transition-transform duration-200"></i>
+                <div class="mt-6">
+                    <a href="/" class="inline-flex items-center px-3 py-1.5 bg-white/20 backdrop-blur-sm text-white font-medium text-xs rounded-md border border-white/30 hover:bg-white/30 transition-all duration-300 group">
+                        <i class="fas fa-arrow-left mr-1.5 text-xs group-hover:-translate-x-1 transition-transform duration-200"></i>
                         Back to Home
                     </a>
                 </div>
@@ -188,174 +191,193 @@
             </div>
 
             <!-- Register Card -->
-            <div class="w-full max-w-lg relative z-10">
-                <div class="glass-effect rounded-3xl shadow-2xl border border-white/20 p-8 animate-fade-in max-h-screen overflow-hidden">
+            <div class="w-full max-w-md relative z-10">
+                <div class="glass-effect rounded-2xl shadow-2xl border border-white/20 p-6 animate-fade-in max-h-screen overflow-hidden">
                     <!-- Header -->
-                    <div class="text-center mb-6">
-                        <div class="w-16 h-16 bg-gradient-to-br from-primary-500 to-primary-700 rounded-2xl flex items-center justify-center mx-auto mb-4 shadow-lg lg:hidden">
-                            <i class="fas fa-user-plus text-white text-2xl"></i>
+                    <div class="text-center mb-4">
+                        <div class="w-10 h-10 bg-gradient-to-br from-primary-500 to-primary-700 rounded-lg flex items-center justify-center mx-auto mb-2 shadow-lg lg:hidden">
+                            <i class="fas fa-user-plus text-white text-sm"></i>
                         </div>
-                        <h2 class="text-3xl lg:text-4xl font-bold text-slate-900 mb-2">Create Account</h2>
-                        <p class="text-slate-600">Join Andi's Futsal community today</p>
+                        <h2 class="text-xl lg:text-2xl font-bold text-slate-900 mb-1">Create Account</h2>
+                        <p class="text-slate-600 text-xs">Join Andi's Futsal community today</p>
                     </div>
 
                     <!-- Scrollable Form Container -->
-                    <div class="max-h-96 lg:max-h-[500px] overflow-y-auto pr-2 scrollbar-thin scrollbar-thumb-primary-300 scrollbar-track-slate-100">
+                    <div class="max-h-80 lg:max-h-96 overflow-y-auto pr-1 scrollbar-thin scrollbar-thumb-primary-300 scrollbar-track-slate-100">
                 <!-- Registration Form -->
-                <form action="{{ route('register.store') }}" method="POST" class="space-y-6">
+                <form action="{{ route('register.store') }}" method="POST" class="space-y-2.5">
                     @csrf
 
                     <!-- Full Name Field -->
-                    <div class="space-y-2">
-                        <label for="nama" class="block text-sm font-semibold text-slate-700">Full Name</label>
+                    <div class="space-y-1.5">
+                        <label for="nama" class="block text-xs font-medium text-slate-700">Full Name</label>
                         <div class="relative">
-                            <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
-                                <i class="fas fa-user text-slate-400"></i>
+                            <div class="absolute inset-y-0 left-0 pl-2.5 flex items-center pointer-events-none">
+                                <i class="fas fa-user text-slate-400 text-xs"></i>
                             </div>
                             <input type="text" id="nama" name="nama" value="{{ old('nama') }}"
-                                class="input-focus block w-full pl-10 pr-4 py-3 border border-slate-200 rounded-xl bg-white/50 backdrop-blur-sm placeholder-slate-400 text-slate-900 focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-primary-500 transition-all duration-300 @error('nama') border-red-300 bg-red-50 @enderror"
+                                class="input-focus block w-full pl-8 pr-3 py-2 text-xs border border-slate-200 rounded-md bg-white/50 backdrop-blur-sm placeholder-slate-400 text-slate-900 focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-primary-500 transition-all duration-300 @error('nama') border-red-300 bg-red-50 @enderror"
                                 placeholder="Enter your full name">
                         </div>
                         @error('nama')
-                            <p class="text-red-600 text-sm flex items-center mt-1">
-                                <i class="fas fa-exclamation-circle mr-1"></i>{{ $message }}
+                            <p class="text-red-600 text-xs flex items-center mt-1">
+                                <i class="fas fa-exclamation-circle mr-1 text-xs"></i>{{ $message }}
                             </p>
                         @enderror
                     </div>
 
                     <!-- Username Field -->
-                    <div class="space-y-2">
-                        <label for="username" class="block text-sm font-semibold text-slate-700">Username</label>
+                    <div class="space-y-1.5">
+                        <label for="username" class="block text-xs font-medium text-slate-700">Username</label>
                         <div class="relative">
-                            <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
-                                <i class="fas fa-at text-slate-400"></i>
+                            <div class="absolute inset-y-0 left-0 pl-2.5 flex items-center pointer-events-none">
+                                <i class="fas fa-at text-slate-400 text-xs"></i>
                             </div>
                             <input type="text" id="username" name="username" value="{{ old('username') }}"
-                                class="input-focus block w-full pl-10 pr-4 py-3 border border-slate-200 rounded-xl bg-white/50 backdrop-blur-sm placeholder-slate-400 text-slate-900 focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-primary-500 transition-all duration-300 @error('username') border-red-300 bg-red-50 @enderror"
+                                class="input-focus block w-full pl-8 pr-3 py-2 text-xs border border-slate-200 rounded-md bg-white/50 backdrop-blur-sm placeholder-slate-400 text-slate-900 focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-primary-500 transition-all duration-300 @error('username') border-red-300 bg-red-50 @enderror"
                                 placeholder="Choose a username">
                         </div>
                         @error('username')
-                            <p class="text-red-600 text-sm flex items-center mt-1">
-                                <i class="fas fa-exclamation-circle mr-1"></i>{{ $message }}
+                            <p class="text-red-600 text-xs flex items-center mt-1">
+                                <i class="fas fa-exclamation-circle mr-1 text-xs"></i>{{ $message }}
                             </p>
                         @enderror
                     </div>
 
                     <!-- Email Field -->
-                    <div class="space-y-2">
-                        <label for="email" class="block text-sm font-semibold text-slate-700">Email Address</label>
+                    <div class="space-y-1.5">
+                        <label for="email" class="block text-xs font-medium text-slate-700">Email Address</label>
                         <div class="relative">
-                            <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
-                                <i class="fas fa-envelope text-slate-400"></i>
+                            <div class="absolute inset-y-0 left-0 pl-2.5 flex items-center pointer-events-none">
+                                <i class="fas fa-envelope text-slate-400 text-xs"></i>
                             </div>
                             <input type="email" id="email" name="email" value="{{ old('email') }}"
-                                class="input-focus block w-full pl-10 pr-4 py-3 border border-slate-200 rounded-xl bg-white/50 backdrop-blur-sm placeholder-slate-400 text-slate-900 focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-primary-500 transition-all duration-300 @error('email') border-red-300 bg-red-50 @enderror"
+                                class="input-focus block w-full pl-8 pr-3 py-2 text-xs border border-slate-200 rounded-md bg-white/50 backdrop-blur-sm placeholder-slate-400 text-slate-900 focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-primary-500 transition-all duration-300 @error('email') border-red-300 bg-red-50 @enderror"
                                 placeholder="Enter your email">
                         </div>
                         @error('email')
-                            <p class="text-red-600 text-sm flex items-center mt-1">
-                                <i class="fas fa-exclamation-circle mr-1"></i>{{ $message }}
+                            <p class="text-red-600 text-xs flex items-center mt-1">
+                                <i class="fas fa-exclamation-circle mr-1 text-xs"></i>{{ $message }}
                             </p>
                         @enderror
                     </div>
 
-                    <!-- Phone Number Field -->
-                    <div class="space-y-2">
-                        <label for="no_hp" class="block text-sm font-semibold text-slate-700">Phone Number</label>
-                        <div class="relative">
-                            <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
-                                <i class="fas fa-phone text-slate-400"></i>
+                    <!-- Phone & Birth Date Row -->
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-2">
+                        <!-- Phone Number Field -->
+                        <div class="space-y-1.5">
+                            <label for="no_hp" class="block text-xs font-medium text-slate-700">Phone Number</label>
+                            <div class="relative">
+                                <div class="absolute inset-y-0 left-0 pl-2.5 flex items-center pointer-events-none">
+                                    <i class="fas fa-phone text-slate-400 text-xs"></i>
+                                </div>
+                                <input type="text" id="no_hp" name="no_hp" value="{{ old('no_hp') }}"
+                                    class="input-focus block w-full pl-8 pr-3 py-2 text-xs border border-slate-200 rounded-md bg-white/50 backdrop-blur-sm placeholder-slate-400 text-slate-900 focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-primary-500 transition-all duration-300 @error('no_hp') border-red-300 bg-red-50 @enderror"
+                                    placeholder="Phone number">
                             </div>
-                            <input type="text" id="no_hp" name="no_hp" value="{{ old('no_hp') }}"
-                                class="input-focus block w-full pl-10 pr-4 py-3 border border-slate-200 rounded-xl bg-white/50 backdrop-blur-sm placeholder-slate-400 text-slate-900 focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-primary-500 transition-all duration-300 @error('no_hp') border-red-300 bg-red-50 @enderror"
-                                placeholder="Enter your phone number">
+                            @error('no_hp')
+                                <p class="text-red-600 text-xs flex items-center mt-1">
+                                    <i class="fas fa-exclamation-circle mr-1 text-xs"></i>{{ $message }}
+                                </p>
+                            @enderror
                         </div>
-                        @error('no_hp')
-                            <p class="text-red-600 text-sm flex items-center mt-1">
-                                <i class="fas fa-exclamation-circle mr-1"></i>{{ $message }}
-                            </p>
-                        @enderror
-                    </div>
 
-                    <!-- Birth Date Field -->
-                    <div class="space-y-2">
-                        <label for="tanggal_lahir" class="block text-sm font-semibold text-slate-700">Date of Birth</label>
-                        <div class="relative">
-                            <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
-                                <i class="fas fa-calendar text-slate-400"></i>
+                        <!-- Birth Date Field -->
+                        <div class="space-y-1.5">
+                            <label for="tanggal_lahir" class="block text-xs font-medium text-slate-700">Date of Birth</label>
+                            <div class="relative">
+                                <div class="absolute inset-y-0 left-0 pl-2.5 flex items-center pointer-events-none">
+                                    <i class="fas fa-calendar text-slate-400 text-xs"></i>
+                                </div>
+                                <input type="date" id="tanggal_lahir" name="tanggal_lahir" value="{{ old('tanggal_lahir') }}"
+                                    class="input-focus block w-full pl-8 pr-3 py-2 text-xs border border-slate-200 rounded-md bg-white/50 backdrop-blur-sm placeholder-slate-400 text-slate-900 focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-primary-500 transition-all duration-300 @error('tanggal_lahir') border-red-300 bg-red-50 @enderror">
                             </div>
-                            <input type="date" id="tanggal_lahir" name="tanggal_lahir" value="{{ old('tanggal_lahir') }}"
-                                class="input-focus block w-full pl-10 pr-4 py-3 border border-slate-200 rounded-xl bg-white/50 backdrop-blur-sm placeholder-slate-400 text-slate-900 focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-primary-500 transition-all duration-300 @error('tanggal_lahir') border-red-300 bg-red-50 @enderror">
+                            @error('tanggal_lahir')
+                                <p class="text-red-600 text-xs flex items-center mt-1">
+                                    <i class="fas fa-exclamation-circle mr-1 text-xs"></i>{{ $message }}
+                                </p>
+                            @enderror
                         </div>
-                        @error('tanggal_lahir')
-                            <p class="text-red-600 text-sm flex items-center mt-1">
-                                <i class="fas fa-exclamation-circle mr-1"></i>{{ $message }}
-                            </p>
-                        @enderror
                     </div>
 
-                    <!-- Password Field -->
-                    <div class="space-y-2">
-                        <label for="password" class="block text-sm font-semibold text-slate-700">Password</label>
-                        <div class="relative">
-                            <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
-                                <i class="fas fa-lock text-slate-400"></i>
+                    <!-- Password Fields Row -->
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-2">
+                        <!-- Password Field -->
+                        <div class="space-y-1.5">
+                            <label for="password" class="block text-xs font-medium text-slate-700">Password</label>
+                            <div class="relative">
+                                <div class="absolute inset-y-0 left-0 pl-2.5 flex items-center pointer-events-none">
+                                    <i class="fas fa-lock text-slate-400 text-xs"></i>
+                                </div>
+                                <input type="password" id="password" name="password"
+                                    class="input-focus block w-full pl-8 pr-10 py-2 text-xs border border-slate-200 rounded-md bg-white/50 backdrop-blur-sm placeholder-slate-400 text-slate-900 focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-primary-500 transition-all duration-300 @error('password') border-red-300 bg-red-50 @enderror"
+                                    placeholder="Password">
+                                <button type="button" id="togglePassword" class="absolute inset-y-0 right-0 pr-2.5 flex items-center">
+                                    <i class="fas fa-eye text-slate-400 hover:text-slate-600 transition-colors duration-200 text-xs"></i>
+                                </button>
                             </div>
-                            <input type="password" id="password" name="password"
-                                class="input-focus block w-full pl-10 pr-12 py-3 border border-slate-200 rounded-xl bg-white/50 backdrop-blur-sm placeholder-slate-400 text-slate-900 focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-primary-500 transition-all duration-300 @error('password') border-red-300 bg-red-50 @enderror"
-                                placeholder="Create a strong password">
-                            <button type="button" id="togglePassword" class="absolute inset-y-0 right-0 pr-3 flex items-center">
-                                <i class="fas fa-eye text-slate-400 hover:text-slate-600 transition-colors duration-200"></i>
-                            </button>
+                            @error('password')
+                                <p class="text-red-600 text-xs flex items-center mt-1">
+                                    <i class="fas fa-exclamation-circle mr-1 text-xs"></i>{{ $message }}
+                                </p>
+                            @enderror
                         </div>
-                        @error('password')
-                            <p class="text-red-600 text-sm flex items-center mt-1">
-                                <i class="fas fa-exclamation-circle mr-1"></i>{{ $message }}
-                            </p>
-                        @enderror
-                    </div>
 
-                    <!-- Password Confirmation Field -->
-                    <div class="space-y-2">
-                        <label for="password_confirmation" class="block text-sm font-semibold text-slate-700">Confirm Password</label>
-                        <div class="relative">
-                            <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
-                                <i class="fas fa-lock text-slate-400"></i>
+                        <!-- Password Confirmation Field -->
+                        <div class="space-y-1.5">
+                            <label for="password_confirmation" class="block text-xs font-medium text-slate-700">Confirm Password</label>
+                            <div class="relative">
+                                <div class="absolute inset-y-0 left-0 pl-2.5 flex items-center pointer-events-none">
+                                    <i class="fas fa-lock text-slate-400 text-xs"></i>
+                                </div>
+                                <input type="password" id="password_confirmation" name="password_confirmation"
+                                    class="input-focus block w-full pl-8 pr-3 py-2 text-xs border border-slate-200 rounded-md bg-white/50 backdrop-blur-sm placeholder-slate-400 text-slate-900 focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-primary-500 transition-all duration-300"
+                                    placeholder="Confirm">
                             </div>
-                            <input type="password" id="password_confirmation" name="password_confirmation"
-                                class="input-focus block w-full pl-10 pr-4 py-3 border border-slate-200 rounded-xl bg-white/50 backdrop-blur-sm placeholder-slate-400 text-slate-900 focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-primary-500 transition-all duration-300"
-                                placeholder="Confirm your password">
                         </div>
                     </div>
 
                     <!-- Submit Button -->
                     <button type="submit"
-                        class="btn-hover w-full bg-gradient-to-r from-primary-600 to-primary-700 hover:from-primary-700 hover:to-primary-800 text-white font-semibold py-3 px-6 rounded-xl shadow-lg focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-2 transition-all duration-300">
-                        <i class="fas fa-user-plus mr-2"></i>
+                        class="btn-hover w-full bg-gradient-to-r from-primary-600 to-primary-700 hover:from-primary-700 hover:to-primary-800 text-white font-medium py-2 px-4 rounded-md shadow-lg focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-2 transition-all duration-300 text-xs">
+                        <i class="fas fa-user-plus mr-1.5 text-xs"></i>
                         Create Account
+                    </button>
+
+                    <!-- Divider -->
+                    <div class="my-3">
+                        <div class="relative">
+                            <div class="absolute inset-0 flex items-center">
+                                <div class="w-full border-t border-slate-200"></div>
+                            </div>
+                            <div class="relative flex justify-center text-xs">
+                                <span class="px-2 bg-white text-slate-500 font-medium">Or continue with</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Google Register Button -->
+                    <button
+                        type="button"
+                        class="w-full bg-white border border-slate-300 text-slate-700 font-medium py-2 px-4 rounded-md hover:bg-slate-50 focus:outline-none focus:ring-2 focus:ring-slate-500 focus:ring-offset-2 transform hover:scale-[1.02] transition-all duration-200 shadow-sm text-xs flex items-center justify-center"
+                    >
+                        <svg class="w-4 h-4 mr-1.5" viewBox="0 0 24 24">
+                            <path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/>
+                            <path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/>
+                            <path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"/>
+                            <path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/>
+                        </svg>
+                        Sign up with Google
                     </button>
                     </form>
                     </div>
 
                     <!-- Fixed Bottom Section -->
-                    <div class="mt-6 pt-6 border-t border-slate-200">
-                        <!-- Divider -->
-                        <div class="mb-6">
-                            <div class="relative">
-                                <div class="absolute inset-0 flex items-center">
-                                    <div class="w-full border-t border-slate-200"></div>
-                                </div>
-                                <div class="relative flex justify-center text-sm">
-                                    <span class="px-4 bg-white text-slate-500 font-medium">Already have an account?</span>
-                                </div>
-                            </div>
-                        </div>
-
+                    <div class="mt-3 pt-3 border-t border-slate-200">
                         <!-- Login Link -->
                         <div class="text-center">
-                            <a href="{{ route('login') }}"
-                                class="inline-flex items-center px-6 py-3 border border-primary-200 text-primary-700 font-semibold rounded-xl hover:bg-primary-50 hover:border-primary-300 transition-all duration-300 group">
-                                <i class="fas fa-sign-in-alt mr-2 group-hover:scale-110 transition-transform duration-200"></i>
+                            <p class="text-xs text-slate-500 mb-1">Already have an account?</p>
+                            <a href="{{ route('login') }}" class="text-xs text-primary-600 hover:text-primary-700 font-medium hover:underline transition-colors duration-200">
                                 Sign In Instead
                             </a>
                         </div>
