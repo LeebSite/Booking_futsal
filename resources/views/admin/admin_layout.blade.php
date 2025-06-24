@@ -18,11 +18,11 @@
                             200: '#bbf7d0',
                             300: '#86efac',
                             400: '#4ade80',
-                            500: '#22c55e',
-                            600: '#16a34a',
-                            700: '#15803d',
-                            800: '#166534',
-                            900: '#14532d',
+                            500: '#10b981',
+                            600: '#059669',
+                            700: '#047857',
+                            800: '#065f46',
+                            900: '#064e3b',
                         }
                     }
                 }
@@ -33,16 +33,21 @@
         body {
             font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
             background: #f8fafc;
+            overflow-x: hidden;
+        }
+
+        html {
+            overflow-x: hidden;
         }
         .sidebar-item {
             transition: all 0.2s ease;
         }
         .sidebar-item:hover {
-            background: rgba(34, 197, 94, 0.1);
-            color: #16a34a;
+            background: rgba(16, 185, 129, 0.1);
+            color: #059669;
         }
         .sidebar-item.active {
-            background: #22c55e;
+            background: #10b981;
             color: white;
         }
         .card-shadow {
@@ -51,6 +56,47 @@
         .card-shadow:hover {
             box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
         }
+
+        /* Ensure header stays fixed width and doesn't scroll */
+        .top-navigation {
+            position: sticky;
+            top: 0;
+            z-index: 40;
+            width: 100%;
+            max-width: 100vw;
+            overflow: hidden;
+        }
+
+        /* Mobile responsive header */
+        @media (max-width: 768px) {
+            .top-navigation .flex {
+                flex-wrap: nowrap;
+                overflow: hidden;
+            }
+
+            .top-navigation .space-x-4 {
+                gap: 0.5rem;
+            }
+
+            .top-navigation button {
+                flex-shrink: 0;
+            }
+        }
+
+        /* Mobile Sidebar - Full height overlay */
+        @media (max-width: 1024px) {
+            #sidebar {
+                height: 100vh;
+                top: 0;
+                left: 0;
+                position: fixed;
+                box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
+            }
+
+            #sidebar.show {
+                transform: translateX(0);
+            }
+        }
     </style>
 </head>
 <body class="bg-gray-50">
@@ -58,7 +104,7 @@
 
     <div class="min-h-screen flex">
         <!-- Sidebar -->
-        <div id="sidebar" class="w-64 bg-white border-r border-gray-200 min-h-screen transition-transform transform -translate-x-full lg:translate-x-0 fixed lg:relative z-30">
+        <div id="sidebar" class="w-64 bg-white border-r border-gray-200 min-h-screen transition-transform transform -translate-x-full lg:translate-x-0 fixed lg:relative z-50">
             <!-- Logo & Title -->
             <div class="p-6 border-b border-gray-100">
                 <div class="flex items-center space-x-3">
@@ -131,9 +177,9 @@
         </div>
 
         <!-- Main Content -->
-        <div class="flex-1 lg:ml-0">
+        <div class="flex-1 lg:ml-0 overflow-x-hidden">
             <!-- Top Navigation -->
-            <div class="bg-white border-b border-gray-200">
+            <div class="top-navigation bg-white border-b border-gray-200">
                 <div class="px-6 py-4 flex items-center justify-between">
                     <div class="flex items-center space-x-4">
                         <button id="hamburger" class="lg:hidden p-2 rounded-lg hover:bg-gray-100 transition-colors duration-200" onclick="toggleSidebar()">
@@ -159,14 +205,16 @@
             </div>
 
             <!-- Content Section -->
-            <div class="p-6 max-w-7xl mx-auto">
-                @yield('content')
+            <div class="p-6">
+                <div class="max-w-7xl mx-auto">
+                    @yield('content')
+                </div>
             </div>
         </div>
     </div>
 
     <!-- Overlay for mobile -->
-    <div id="sidebar-overlay" class="fixed inset-0 bg-black bg-opacity-50 z-20 hidden lg:hidden" onclick="toggleSidebar()"></div>
+    <div id="sidebar-overlay" class="fixed inset-0 bg-black bg-opacity-50 z-40 hidden lg:hidden" onclick="toggleSidebar()"></div>
 
     <!-- Logout Form -->
     <form id="logout-form" action="{{ route('logout') }}" method="POST" class="hidden">
@@ -186,6 +234,7 @@
             const overlay = document.getElementById('sidebar-overlay');
 
             sidebar.classList.toggle('-translate-x-full');
+            sidebar.classList.toggle('show');
             overlay.classList.toggle('hidden');
         }
 
@@ -209,6 +258,7 @@
 
             if (window.innerWidth >= 1024) {
                 sidebar.classList.remove('-translate-x-full');
+                sidebar.classList.remove('show');
                 overlay.classList.add('hidden');
             }
         });

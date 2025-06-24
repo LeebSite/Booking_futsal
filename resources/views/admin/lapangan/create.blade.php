@@ -1,5 +1,8 @@
 @extends('admin.admin_layout')
 
+@section('title', 'Tambah Lapangan - Andi\'s Futsal')
+@section('header', 'Tambah Lapangan')
+
 @section('content')
 <div class="bg-white p-6 rounded-lg shadow-md">
     <h1 class="font-bold mb-4 text-gray-800">Tambah Lapangan</h1>

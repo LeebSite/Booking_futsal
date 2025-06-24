@@ -25,8 +25,8 @@
     @endif
 
     <!-- Compact Table -->
-    <div class="overflow-x-auto">
-        <table class="min-w-full">
+    <div class="overflow-x-auto max-w-full">
+        <table class="min-w-full w-full">
             @if(count($headers) > 0)
             <thead class="bg-gray-50/30">
                 <tr>

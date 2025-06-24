@@ -1,5 +1,8 @@
 @extends('admin.admin_layout')
 
+@section('title', 'Detail Pesanan - Andi\'s Futsal')
+@section('header', 'Detail Pesanan')
+
 @section('content')
 <div class="container mx-auto p-5">
     <h1 class="text-3xl font-bold mb-6 text-center">Detail Pesanan Diterima</h1>

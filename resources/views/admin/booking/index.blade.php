@@ -1,9 +1,11 @@
 @extends('admin.admin_layout')
 
+@section('title', 'Daftar Pesanan - Andi\'s Futsal')
+@section('header', 'Pesanan')
+
 @section('content')
-<div class="container mx-auto p-4">
-    <div class="bg-white p-4 rounded-lg shadow-sm">
-        <h1 class="text-xl font-bold mb-4 text-gray-800">Daftar Pesanan Booking</h1>
+<div class="bg-white p-6 rounded-lg shadow-md">
+        <h1 class="text-2xl font-bold mb-4 text-gray-800">Daftar Pesanan Booking</h1>
 
         @if(session('success'))
             <div class="bg-green-50 border border-green-200 text-green-800 p-3 rounded-lg mb-4">
@@ -91,5 +93,4 @@
             @endforelse
         </x-compact-table>
     </div>
-</div>
 @endsection

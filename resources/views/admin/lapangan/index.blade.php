@@ -1,8 +1,10 @@
 @extends('admin.admin_layout')
 
+@section('title', 'Kelola Lapangan - Andi\'s Futsal')
+@section('header', 'Lapangan')
+
 @section('content')
-<div class="container mx-auto">
-    <div class="bg-white p-6 rounded-lg shadow-md">
+<div class="bg-white p-6 rounded-lg shadow-md">
         <h1 class="text-2xl font-bold mb-4 text-gray-800">Kelola Lapangan</h1>
 
         @if(session('success'))
@@ -77,5 +79,4 @@
             @endforeach
         </x-compact-table>
     </div>
-</div>
 @endsection
